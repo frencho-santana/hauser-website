@@ -132,6 +132,11 @@ nav{
 }
 .hero-btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(26,74,90,0.4)}
 .hero-btn-sub{font-size:12px;color:var(--text-muted)}
+.hero-roadmap{
+  font-size:12px;color:var(--text-muted);margin-top:16px;
+  display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+}
+.hero-roadmap span{font-weight:500;color:var(--text)}
 
 /* Phone showcase */
 .phone-showcase{
@@ -441,6 +446,18 @@ nav{
 .cta-free-note{
   margin-top:14px;font-size:12px;color:rgba(255,255,255,0.35);
 }
+.roadmap-row{
+  display:flex;align-items:center;justify-content:center;
+  gap:12px;flex-wrap:wrap;margin-top:28px;
+  font-size:13px;color:rgba(255,255,255,0.5);
+}
+.roadmap-item{
+  display:flex;align-items:center;gap:8px;
+}
+.roadmap-item span{font-weight:500;color:rgba(255,255,255,0.7)}
+.roadmap-arrow{
+  color:rgba(255,255,255,0.25);font-size:12px;
+}
 .btn-cta{
   display:inline-flex;align-items:center;gap:8px;
   padding:15px 36px;background:white;color:var(--teal);
@@ -529,7 +546,7 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
     max-width:1180px;margin:0 auto;width:100%;
   }
   .hero-inner{max-width:480px;flex-shrink:0}
-  .hero-coming,.free-pill{margin-left:0}
+  .hero-coming,.free-pill,.hero-roadmap{margin-left:0;justify-content:flex-start}
   .phone-showcase{margin-top:0;flex-shrink:0}
   .section{padding:100px 72px;max-width:1140px;margin:0 auto}
   .cta-section{padding:90px 72px}
@@ -578,6 +595,9 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
       App in Entwicklung
     </div>
     <div class="hero-btn-sub">Kostenlos · Unverbindlich</div>
+    <div class="hero-roadmap">
+      <span>iPhone</span> → <span>iPad</span> → <span>Web</span>
+    </div>
   </div>
   <div class="phone-showcase">
     <div class="phone-frame side">
@@ -802,6 +822,13 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
 <section class="cta-section" id="contact">
   <h2 class="cta-title">Hauser<br><em>demnächst.</em></h2>
   <p class="cta-sub">Dein Immobilienportfolio — klar im Blick. Die App befindet sich in Entwicklung.</p>
+  <div class="roadmap-row">
+    <span class="roadmap-item"><span>iPhone</span> zuerst</span>
+    <span class="roadmap-arrow">→</span>
+    <span class="roadmap-item"><span>iPad</span></span>
+    <span class="roadmap-arrow">→</span>
+    <span class="roadmap-item"><span>Web</span></span>
+  </div>
   <p class="cta-free-note">Basis-Version ist und bleibt kostenlos.</p>
 </section>
 
