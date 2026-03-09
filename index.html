@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hauser – Dein Immobilienportfolio. Klar im Blick.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#1a4a5a;
+  --teal-mid:#1e6278;
+  --teal-light:#2d8fa8;
+  --teal-pale:#e8f4f7;
+  --gold:#b8882a;
+  --gold-light:#d4a940;
+  --gold-pale:#fdf6e8;
+  --cream:#f4f1ec;
+  --cream-dark:#e8e4db;
+  --dark:#141414;
+  --text:#2c2c2c;
+  --text-muted:#7a7a7a;
+  --white:#fff;
+  --green:#2e8b6e;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 20px;
+  background:rgba(244,241,236,0.95);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(26,74,90,0.1);
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-icon{
+  width:34px;height:34px;border-radius:22%;overflow:hidden;
+  flex-shrink:0;
+}
+.nav-logo-icon img{width:100%;height:100%;object-fit:cover}
+.nav-logo-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px;font-weight:700;color:var(--dark);
+}
+.nav-logo-name span{color:var(--teal)}
+.nav-badge{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(26,74,90,0.08);
+  border-radius:20px;padding:7px 14px;
+  font-size:12px;font-weight:600;color:var(--teal);
+  letter-spacing:0.05em;
+}
+.nav-badge-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--teal-light);
+  animation:pulse 2s ease infinite;
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:100svh;
+  padding:88px 22px 56px;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 0%,rgba(26,74,90,0.1) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 40% at 90% 100%,rgba(184,136,42,0.07) 0%,transparent 60%);
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(26,74,90,0.045) 1px,transparent 1px);
+  background-size:26px 26px;
+  mask-image:radial-gradient(ellipse 100% 100% at 50% 50%,black 20%,transparent 75%);
+}
+.hero-inner{position:relative;z-index:1;max-width:500px;margin:0 auto}
+
+.hero-coming{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--teal);
+  border-radius:30px;padding:6px 16px 6px 10px;
+  font-size:11px;font-weight:600;color:white;
+  margin-bottom:24px;letter-spacing:0.08em;text-transform:uppercase;
+  box-shadow:0 4px 16px rgba(26,74,90,0.3);
+}
+.coming-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--gold-light);animation:pulse 1.8s ease infinite;
+}
+
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(46px,13vw,72px);
+  font-weight:700;line-height:1.04;
+  color:var(--dark);margin-bottom:18px;
+  letter-spacing:-0.02em;
+}
+.hero-h1 em{font-style:italic;color:var(--teal)}
+
+.hero-sub{
+  font-size:15px;font-weight:300;line-height:1.8;
+  color:var(--text-muted);margin-bottom:12px;
+}
+
+/* FREE FOREVER PILL */
+.free-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(46,139,110,0.1);
+  border:1.5px solid rgba(46,139,110,0.25);
+  border-radius:30px;padding:8px 18px;
+  font-size:13px;font-weight:600;color:var(--green);
+  margin-bottom:32px;
+}
+.free-pill svg{width:15px;height:15px;flex-shrink:0}
+
+.hero-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:600;color:white;
+  padding:15px 32px;
+  background:var(--teal);
+  border-radius:12px;text-decoration:none;
+  box-shadow:0 10px 28px rgba(26,74,90,0.35);
+  transition:all 0.25s;
+  margin-bottom:10px;
+}
+.hero-btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(26,74,90,0.4)}
+.hero-btn-sub{font-size:12px;color:var(--text-muted)}
+
+/* Phone showcase */
+.phone-showcase{
+  position:relative;z-index:1;
+  margin-top:52px;
+  display:flex;justify-content:center;
+  gap:14px;align-items:flex-end;
+}
+.phone-frame{
+  flex-shrink:0;
+  background:#0f0f0f;
+  border-radius:40px;padding:10px;
+  box-shadow:
+    0 36px 80px rgba(0,0,0,0.24),
+    0 0 0 1px rgba(255,255,255,0.07),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  position:relative;
+}
+.phone-frame.main{width:min(225px,54vw)}
+.phone-frame.side{
+  width:min(185px,44vw);
+  margin-bottom:28px;
+  opacity:0.82;
+  transform:perspective(700px) rotateY(-5deg);
+}
+.phone-notch{
+  position:absolute;top:10px;left:50%;transform:translateX(-50%);
+  width:76px;height:20px;
+  background:#0f0f0f;border-radius:0 0 12px 12px;z-index:10;
+}
+.phone-screen img{
+  width:100%;display:block;
+  border-radius:30px;
+}
+
+/* ── USP STRIP ── */
+.usp-strip{
+  background:var(--teal);
+  padding:0 20px;
+  display:flex;flex-direction:column;
+}
+.usp-item{
+  display:flex;align-items:center;gap:14px;
+  padding:18px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.usp-item:last-child{border-bottom:none}
+.usp-icon{
+  width:38px;height:38px;border-radius:10px;
+  background:rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:white;
+}
+.usp-icon svg{width:18px;height:18px}
+.usp-text{flex:1}
+.usp-title{font-size:14px;font-weight:600;color:white;margin-bottom:1px}
+.usp-sub{font-size:12px;color:rgba(255,255,255,0.55)}
+
+/* ── SECTIONS ── */
+.section{padding:72px 22px}
+.sec-eyebrow{
+  font-size:11px;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:10px;
+}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,9vw,50px);font-weight:600;
+  line-height:1.1;color:var(--dark);
+  margin-bottom:14px;letter-spacing:-0.02em;
+}
+.sec-title em{font-style:italic;color:var(--teal)}
+.sec-sub{
+  font-size:15px;font-weight:300;
+  line-height:1.8;color:var(--text-muted);
+  margin-bottom:36px;
+}
+
+/* Free forever callout */
+.free-callout{
+  background:linear-gradient(135deg,rgba(46,139,110,0.08),rgba(26,74,90,0.06));
+  border:1.5px solid rgba(46,139,110,0.2);
+  border-radius:16px;padding:20px;
+  display:flex;gap:14px;align-items:flex-start;
+  margin-bottom:36px;
+}
+.free-callout-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:rgba(46,139,110,0.12);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:var(--green);
+}
+.free-callout-icon svg{width:20px;height:20px}
+.free-callout-title{font-size:15px;font-weight:600;color:var(--green);margin-bottom:4px}
+.free-callout-text{font-size:13px;color:var(--text-muted);line-height:1.65}
+
+/* Features */
+.features-list{display:flex;flex-direction:column;gap:14px}
+.feature-card{
+  background:white;border-radius:16px;
+  padding:22px;
+  border:1px solid rgba(26,74,90,0.07);
+  display:flex;gap:16px;align-items:flex-start;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.feature-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(26,74,90,0.08)}
+.fc-icon{
+  width:42px;height:42px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.fc-icon.teal{background:var(--teal-pale);color:var(--teal)}
+.fc-icon.gold{background:var(--gold-pale);color:var(--gold)}
+.fc-icon.green{background:rgba(46,139,110,0.1);color:var(--green)}
+.fc-icon svg{width:20px;height:20px}
+.fc-body{}
+.fc-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;font-weight:600;
+  color:var(--dark);margin-bottom:5px;
+}
+.fc-text{font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted)}
+
+/* ── GALLERY ── */
+.gallery{padding:72px 0;background:var(--dark);overflow:hidden}
+.gallery-inner{padding:0 22px;margin-bottom:32px}
+.gallery-eyebrow{
+  font-size:11px;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:10px;
+}
+.gallery-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(30px,9vw,46px);font-weight:600;
+  line-height:1.1;color:white;
+  letter-spacing:-0.02em;margin-bottom:10px;
+}
+.gallery-title em{font-style:italic;color:rgba(255,255,255,0.45)}
+.gallery-sub{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.7}
+
+.screens-scroll{
+  display:flex;gap:16px;
+  padding:4px 22px 20px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;
+}
+.screens-scroll::-webkit-scrollbar{display:none}
+.screen-item{
+  flex-shrink:0;
+  scroll-snap-align:start;
+  width:min(200px,56vw);
+}
+.screen-frame{
+  background:#111;border-radius:36px;padding:8px;
+  box-shadow:0 18px 48px rgba(0,0,0,0.45);
+}
+.screen-notch{
+  width:56px;height:14px;
+  background:#111;border-radius:0 0 9px 9px;
+  margin:0 auto;margin-top:-8px;position:relative;z-index:1;
+}
+.screen-frame img{width:100%;border-radius:28px;display:block}
+.screen-caption{margin-top:14px;padding:0 4px}
+.screen-cap-title{font-size:13px;font-weight:600;color:white;margin-bottom:3px}
+.screen-cap-sub{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5}
+
+/* ── PRICING ── */
+.pricing{padding:72px 22px;background:var(--cream)}
+.pricing-stack{display:flex;flex-direction:column;gap:16px;margin-top:36px}
+
+.price-card{
+  background:white;border-radius:20px;
+  padding:28px 24px;
+  border:1.5px solid rgba(26,74,90,0.08);
+}
+
+/* Free card highlight */
+.price-card.free-card{
+  border-color:rgba(46,139,110,0.25);
+  position:relative;overflow:hidden;
+}
+.price-card.free-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--green),rgba(46,139,110,0.4));
+}
+.free-forever-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(46,139,110,0.1);
+  border:1px solid rgba(46,139,110,0.25);
+  border-radius:20px;padding:4px 12px;
+  font-size:11px;font-weight:700;color:var(--green);
+  letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+/* Pro coming soon card */
+.price-card.pro-card{
+  background:var(--teal);
+  border-color:var(--teal);
+  position:relative;overflow:hidden;
+}
+.price-card.pro-card::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 0%,rgba(45,143,168,0.5) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 100%,rgba(184,136,42,0.2) 0%,transparent 60%);
+}
+.price-card.pro-card > *{position:relative;z-index:1}
+
+.pro-soon-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:20px;padding:5px 13px;
+  font-size:11px;font-weight:700;color:rgba(255,255,255,0.9);
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.pro-soon-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold-light);animation:pulse 1.8s ease infinite;
+}
+
+.price-tier{
+  font-size:11px;font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:8px;
+}
+.price-tier.light{color:rgba(255,255,255,0.5)}
+.price-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:56px;font-weight:700;
+  color:var(--dark);line-height:1;margin-bottom:4px;
+}
+.price-val sup{font-size:22px;vertical-align:super}
+.price-val.white{color:white}
+.price-period{font-size:12px;color:var(--text-muted);margin-bottom:24px}
+.price-period.light{color:rgba(255,255,255,0.5)}
+
+.price-features{list-style:none;margin-bottom:26px}
+.price-features li{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:9px 0;font-size:13.5px;
+  color:var(--text);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  line-height:1.5;
+}
+.price-features li:last-child{border-bottom:none}
+.pfc{color:var(--green);flex-shrink:0;font-size:13px;margin-top:1px}
+
+.pro-coming-text{
+  font-size:14px;font-weight:300;
+  color:rgba(255,255,255,0.65);
+  line-height:1.75;
+  margin-bottom:14px;
+}
+.pro-teaser{
+  display:flex;flex-direction:column;gap:8px;
+  margin-bottom:24px;
+}
+.pro-teaser-item{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;color:rgba(255,255,255,0.6);
+}
+.pro-teaser-item::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:rgba(255,255,255,0.3);flex-shrink:0;
+}
+
+.btn-plan{
+  display:block;width:100%;text-align:center;
+  padding:14px;border-radius:11px;
+  font-size:14px;font-weight:600;
+  text-decoration:none;transition:all 0.2s;cursor:pointer;
+  border:none;font-family:'Outfit',sans-serif;
+}
+.btn-download{
+  background:var(--teal);color:white;
+  box-shadow:0 6px 20px rgba(26,74,90,0.3);
+}
+.btn-download:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(26,74,90,0.4)}
+.btn-notify{
+  background:rgba(255,255,255,0.15);
+  border:1.5px solid rgba(255,255,255,0.3);
+  color:white;
+}
+.btn-notify:hover{background:rgba(255,255,255,0.22)}
+
+/* ── CTA ── */
+.cta-section{
+  background:var(--dark);padding:72px 22px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(26,74,90,0.5) 0%,transparent 70%);
+}
+.cta-section>*{position:relative;z-index:1}
+.cta-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,11vw,56px);font-weight:600;
+  color:white;margin-bottom:14px;letter-spacing:-0.02em;line-height:1.1;
+}
+.cta-title em{font-style:italic;color:rgba(255,255,255,0.5)}
+.cta-sub{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:32px;line-height:1.7}
+.cta-free-note{
+  margin-top:14px;font-size:12px;color:rgba(255,255,255,0.35);
+}
+.btn-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:15px 36px;background:white;color:var(--teal);
+  border-radius:12px;font-size:15px;font-weight:700;
+  text-decoration:none;transition:all 0.2s;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
+
+/* ── FOOTER ── */
+footer{background:#0d0d0d;padding:48px 22px 32px}
+.footer-brand{margin-bottom:36px}
+.footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:12px}
+.footer-logo-icon{
+  width:34px;height:34px;border-radius:22%;overflow:hidden;flex-shrink:0;
+}
+.footer-logo-icon img{width:100%;height:100%;object-fit:cover}
+.footer-logo-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:700;color:white;
+}
+.footer-logo-name span{color:var(--teal-light)}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.65;max-width:260px}
+.footer-links{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:28px;margin-bottom:36px;
+}
+.footer-col h4{
+  font-size:11px;font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:rgba(255,255,255,0.3);margin-bottom:12px;
+}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul li a{
+  text-decoration:none;font-size:13px;
+  color:rgba(255,255,255,0.45);transition:color 0.2s;
+}
+.footer-col ul li a:hover{color:white}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding-top:24px;
+  font-size:11px;color:rgba(255,255,255,0.2);
+  display:flex;flex-direction:column;gap:4px;
+}
+
+/* ANIMATIONS */
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.45;transform:scale(0.7)}
+}
+.reveal{
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.65s ease,transform 0.65s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── DESKTOP ── */
+@media(min-width:700px){
+  nav{padding:16px 48px}
+  .hero{padding:106px 48px 72px}
+  .phone-frame.main{width:240px}
+  .phone-frame.side{width:196px}
+  .usp-strip{flex-direction:row;padding:24px 48px;gap:0}
+  .usp-item{flex:1;border-bottom:none;border-right:1px solid rgba(255,255,255,0.08);padding:0 24px}
+  .usp-item:last-child{border-right:none}
+  .section{padding:90px 48px}
+  .free-callout{padding:24px}
+  .features-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .gallery{padding:90px 0}
+  .gallery-inner{padding:0 48px}
+  .screens-scroll{padding:4px 48px 20px}
+  .screen-item{width:min(220px,35vw)}
+  .pricing{padding:90px 48px}
+  .pricing-stack{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+  footer{padding:60px 48px 36px}
+  .footer-content{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
+  .footer-links{margin-bottom:0}
+}
+@media(min-width:1060px){
+  nav{padding:18px 72px}
+  .hero{
+    flex-direction:row;text-align:left;
+    align-items:center;justify-content:center;
+    gap:56px;padding:110px 72px 80px;
+    max-width:1180px;margin:0 auto;width:100%;
+  }
+  .hero-inner{max-width:480px;flex-shrink:0}
+  .hero-coming,.free-pill{margin-left:0}
+  .phone-showcase{margin-top:0;flex-shrink:0}
+  .section{padding:100px 72px;max-width:1140px;margin:0 auto}
+  .cta-section{padding:90px 72px}
+  footer{padding:64px 72px 40px;max-width:1140px;margin:0 auto}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <img src="logo.png" alt="Hauser">
+    </div>
+    <span class="nav-logo-name">Hau<span>ser</span></span>
+  </a>
+  <div class="nav-badge">
+    <div class="nav-badge-dot"></div>
+    Coming Soon
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-coming">
+      <div class="coming-dot"></div>
+      Bald verfügbar
+    </div>
+    <h1 class="hero-h1">
+      Dein Portfolio.<br>
+      <em>Klar im</em><br>
+      Blick.
+    </h1>
+    <p class="hero-sub">
+      Alle Immobilien, Finanzierungen und Mieter in einer eleganten App. Cashflows, Restschulden und Renditen — auf einen Blick.
+    </p>
+    <div class="free-pill">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Basis-Version: für immer kostenlos — egal wie viele Immobilien
+    </div>
+    <div class="hero-btn" style="cursor:default;pointer-events:none;opacity:0.9">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      App in Entwicklung
+    </div>
+    <div class="hero-btn-sub">Kostenlos · Unverbindlich</div>
+  </div>
+  <div class="phone-showcase">
+    <div class="phone-frame side">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <img src="screenshot-portfolio.png" alt="Hauser App">
+      </div>
+    </div>
+    <div class="phone-frame main">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <img src="screenshot-immobilien.png" alt="Hauser App">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USP STRIP -->
+<div class="usp-strip reveal">
+  <div class="usp-item">
+    <div class="usp-icon">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </div>
+    <div class="usp-text">
+      <div class="usp-title">Immer kostenlos</div>
+      <div class="usp-sub">Basis ohne Limit für immer gratis</div>
+    </div>
+  </div>
+  <div class="usp-item">
+    <div class="usp-icon">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.8"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="1.8"/></svg>
+    </div>
+    <div class="usp-text">
+      <div class="usp-title">Unbegrenzt</div>
+      <div class="usp-sub">Beliebig viele Immos & Einheiten</div>
+    </div>
+  </div>
+  <div class="usp-item">
+    <div class="usp-icon">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
+    </div>
+    <div class="usp-text">
+      <div class="usp-title">Alles auf einen Blick</div>
+      <div class="usp-sub">Portfolio, Cashflow & Finanzierung</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="sec-eyebrow">Was Hauser kann</div>
+  <h2 class="sec-title">Alles drin.<br><em>Alles gratis.</em></h2>
+
+  <div class="free-callout reveal">
+    <div class="free-callout-icon">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </div>
+    <div>
+      <div class="free-callout-title">Basis ist für immer kostenlos</div>
+      <div class="free-callout-text">Egal ob 1 oder 50 Immobilien — der Kern von Hauser bleibt dauerhaft gratis. Keine versteckten Limits, keine Kreditkarte, keine Tricks.</div>
+    </div>
+  </div>
+
+  <div class="features-list reveal">
+    <div class="feature-card">
+      <div class="fc-icon teal">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
+      </div>
+      <div class="fc-body">
+        <div class="fc-title">Portfolio-Dashboard</div>
+        <p class="fc-text">Gesamtwert, Eigenkapital, Fremdkapital und Cashflow aller Objekte — übersichtlich auf einer Seite.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon gold">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <div class="fc-body">
+        <div class="fc-title">Finanzierungs-Übersicht</div>
+        <p class="fc-text">Restschulden, Zinssätze und monatliche Raten für alle Darlehen. Kein Excel, kein Ordnersuchen.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon green">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <div class="fc-body">
+        <div class="fc-title">Mieter-Verwaltung</div>
+        <p class="fc-text">Mieter, Kalt- und Warmmiete, Mietbeginn und Notizen — direkt anrufen oder mailen aus der App.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon teal">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/></svg>
+      </div>
+      <div class="fc-body">
+        <div class="fc-title">Objekt-Details</div>
+        <p class="fc-text">Adresse mit Karte, Einheiten, Fläche, Wert und LTV-Quote — vollständig dokumentiert.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon gold">
+        <svg viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="fc-body">
+        <div class="fc-title">Cashflow-Analyse</div>
+        <p class="fc-text">Monatlicher und jährlicher Cashflow pro Objekt und gesamt. Sofort sichtbar, was performt.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon green">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="fc-body">
+        <div class="fc-title">Aufgaben-Historie</div>
+        <p class="fc-text">Mieteingänge, Renovierungen, Ereignisse — lückenlos protokolliert. Du weißt immer was wann passiert ist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="screens">
+  <div class="gallery-inner reveal">
+    <div class="gallery-eyebrow">App-Einblicke</div>
+    <h2 class="gallery-title">Jeder Screen<br><em>durchdacht.</em></h2>
+    <p class="gallery-sub">Wisch durch alle Ansichten — vom Portfolio bis zum Mietvertrag.</p>
+  </div>
+  <div class="screens-scroll">
+    <div class="screen-item">
+      <div class="screen-frame">
+        <div class="screen-notch"></div>
+        <img src="screenshot-portfolio.png" alt="Hauser App">
+      </div>
+      <div class="screen-caption">
+        <div class="screen-cap-title">Portfolio</div>
+        <div class="screen-cap-sub">Gesamtübersicht mit Eigenkapital & Cashflow</div>
+      </div>
+    </div>
+    <div class="screen-item">
+      <div class="screen-frame">
+        <div class="screen-notch"></div>
+        <img src="screenshot-immobilien.png" alt="Hauser App">
+      </div>
+      <div class="screen-caption">
+        <div class="screen-cap-title">Immobilien</div>
+        <div class="screen-cap-sub">Alle Objekte mit Wert & Rendite</div>
+      </div>
+    </div>
+    <div class="screen-item">
+      <div class="screen-frame">
+        <div class="screen-notch"></div>
+        <img src="screenshot-finanzierung.png" alt="Hauser App">
+      </div>
+      <div class="screen-caption">
+        <div class="screen-cap-title">Finanzierung</div>
+        <div class="screen-cap-sub">Restschulden, Zinsen & Raten</div>
+      </div>
+    </div>
+    <div class="screen-item">
+      <div class="screen-frame">
+        <div class="screen-notch"></div>
+        <img src="screenshot-einheit-mieter.png" alt="Hauser App">
+      </div>
+      <div class="screen-caption">
+        <div class="screen-cap-title">Einheit & Mieter</div>
+        <div class="screen-cap-sub">Mietdetails & Aufgaben-Historie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="sec-eyebrow">Preise</div>
+  <h2 class="sec-title">Einfach.<br><em>Ehrlich.</em></h2>
+  <p class="sec-sub">Der Kern bleibt für immer kostenlos. Premium-Features kommen später.</p>
+
+  <div class="pricing-stack reveal">
+    <!-- FREE -->
+    <div class="price-card free-card">
+      <div class="free-forever-tag">✦ Für immer kostenlos</div>
+      <div class="price-tier">Basis</div>
+      <div class="price-val"><sup>€</sup>0</div>
+      <div class="price-period">Dauerhaft · Kein Limit · Kein Kreditkarte</div>
+      <ul class="price-features">
+        <li><span class="pfc">✓</span> <span><strong>Unbegrenzte Immobilien</strong> — egal wie viele</span></li>
+        <li><span class="pfc">✓</span> <span><strong>Unbegrenzte Einheiten</strong> pro Objekt</span></li>
+        <li><span class="pfc">✓</span> Portfolio-Dashboard & Cashflow</li>
+        <li><span class="pfc">✓</span> Finanzierungs-Tracking</li>
+        <li><span class="pfc">✓</span> Mieter-Verwaltung</li>
+        <li><span class="pfc">✓</span> Objekt-Details mit Karte</li>
+        <li><span class="pfc">✓</span> Aufgaben-Historie</li>
+      </ul>
+      <span class="btn-plan btn-download" style="cursor:default;opacity:0.9">Demnächst verfügbar</span>
+    </div>
+
+    <!-- PRO COMING SOON -->
+    <div class="price-card pro-card">
+      <div class="pro-soon-tag">
+        <div class="pro-soon-dot"></div>
+        Coming Soon
+      </div>
+      <div class="price-tier light">Pro</div>
+      <div class="price-val white"><sup>€</sup>?</div>
+      <div class="price-period light">Preis wird noch bekanntgegeben</div>
+      <p class="pro-coming-text">
+        Pro-Features sind in Entwicklung. Was genau dazukommt, entscheiden wir gemeinsam mit unseren ersten Nutzern.
+      </p>
+      <div class="pro-teaser">
+        <div class="pro-teaser-item">Steuerberater-Export</div>
+        <div class="pro-teaser-item">Erweiterte Analysen & Charts</div>
+        <div class="pro-teaser-item">Cloud-Backup & Sync</div>
+        <div class="pro-teaser-item">… und mehr kommt noch</div>
+      </div>
+      <span class="btn-plan btn-notify" style="cursor:default;opacity:0.9">Demnächst verfügbar</span>
+    </div>
+  </div>
+</section>
+
+<!-- NOTIFY / CTA -->
+<section class="cta-section" id="contact">
+  <h2 class="cta-title">Hauser<br><em>demnächst.</em></h2>
+  <p class="cta-sub">Dein Immobilienportfolio — klar im Blick. Die App befindet sich in Entwicklung.</p>
+  <p class="cta-free-note">Basis-Version ist und bleibt kostenlos.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <div class="footer-logo-icon">
+          <img src="logo.png" alt="Hauser">
+        </div>
+        <span class="footer-logo-name">Hau<span>ser</span></span>
+      </a>
+      <p class="footer-tagline">Dein Immobilienportfolio.<br>Klar im Blick. Für immer kostenlos.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>App</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#screens">Screenshots</a></li>
+          <li><a href="#pricing">Preise</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz-app.html">Datenschutz App</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hauser. Alle Rechte vorbehalten.</span>
+    <span>Entwickelt in Deutschland 🇩🇪</span>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'), i*70);
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
