@@ -9,6 +9,23 @@
   <meta property="og:title" content="FAQ – Häufige Fragen zu Hauser">
   <meta property="og:description" content="Kosten, Geräte, Datenschutz – die häufigsten Fragen zu Hauser beantwortet.">
   <meta property="og:url" content="https://hauser.app/faq.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Wann ist Hauser verfügbar?", "acceptedAnswer": {"@type": "Answer", "text": "Hauser befindet sich derzeit in Entwicklung. Zuerst erscheint die App für iPhone, danach für iPad und später für Web. Die Basis-Version wird für immer kostenlos bleiben."}},
+      {"@type": "Question", "name": "Für welche Geräte gibt es Hauser?", "acceptedAnswer": {"@type": "Answer", "text": "Geplant sind: iPhone (zuerst), iPad und Web. So kannst du dein Portfolio unterwegs und am Schreibtisch im Blick behalten."}},
+      {"@type": "Question", "name": "Kann ich mich für den Start benachrichtigen lassen?", "acceptedAnswer": {"@type": "Answer", "text": "Die App ist noch nicht im App Store. Sobald Hauser verfügbar ist, findest du sie dort. Folge uns für Updates."}},
+      {"@type": "Question", "name": "Was kostet Hauser?", "acceptedAnswer": {"@type": "Answer", "text": "Die Basis-Version ist für immer kostenlos. Unbegrenzte Immobilien, unbegrenzte Einheiten, Portfolio-Dashboard, Finanzierungs-Tracking, Mieter-Verwaltung – alles ohne Abo. Pro-Features (z.B. Steuerberater-Export, erweiterte Analysen) kommen später und werden separat angeboten."}},
+      {"@type": "Question", "name": "Brauche ich eine Kreditkarte?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Für die kostenlose Basis-Version ist keine Kreditkarte erforderlich."}},
+      {"@type": "Question", "name": "Wo werden meine Daten gespeichert?", "acceptedAnswer": {"@type": "Answer", "text": "Hauser speichert deine Daten sicher und verschlüsselt. Details findest du in unserer Datenschutzerklärung für die App."}},
+      {"@type": "Question", "name": "Werden meine Daten verkauft?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Wir verkaufen keine Nutzerdaten. Deine Immobilien- und Mieterdaten gehören dir und werden nicht an Dritte weitergegeben."}},
+      {"@type": "Question", "name": "Was kann ich mit Hauser machen?", "acceptedAnswer": {"@type": "Answer", "text": "Portfolio-Übersicht mit Eigenkapital und Cashflow, Immobilien mit Wert und Rendite, Finanzierungs-Tracking (Restschulden, Zinsen, Raten), Mieter-Verwaltung pro Einheit, Objekt-Details mit Karte, Aufgaben-Historie für Mieteingänge und Renovierungen."}},
+      {"@type": "Question", "name": "Gibt es einen Steuerberater-Export?", "acceptedAnswer": {"@type": "Answer", "text": "Das ist als Pro-Feature geplant. Der genaue Umfang wird mit den ersten Nutzern entwickelt."}}
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -50,12 +67,15 @@
     .faq-cta{
       background:rgba(26,74,90,0.08);
       border-radius:12px;
-      padding:24px;
+      padding:28px;
       margin-top:36px;
       border-left:4px solid var(--teal);
       text-align:center;
     }
-    .faq-cta a{font-weight:600}
+    .faq-cta p{margin-bottom:20px}
+    .faq-cta p:last-of-type{margin-bottom:0}
+    .cta-btn{display:inline-block;padding:14px 28px;background:var(--teal);color:white!important;font-weight:600;font-size:15px;border-radius:10px;text-decoration:none;margin-top:8px;transition:background 0.2s,transform 0.15s}
+    .cta-btn:hover{background:var(--teal-light);color:white!important;transform:translateY(-1px)}
     .legal-link{margin-top:28px;padding-top:20px;border-top:1px solid rgba(26,74,90,0.15);display:flex;flex-wrap:wrap;gap:12px}
     .legal-link a{font-size:14px}
     footer{background:#0d0d0d;padding:48px 22px 32px;margin-top:48px}
@@ -160,7 +180,8 @@
     </div>
 
     <div class="faq-cta">
-      <p><strong>Mehr erfahren?</strong> Entdecke alle Features und Screenshots auf der <a href="index.html">Startseite</a>.</p>
+      <p><strong>Hauser entdecken</strong> – die App für Vermieter. Portfolio, Mieter, Finanzen – alles im Blick. Für immer kostenlos.</p>
+      <a href="index.html" class="cta-btn">Hauser kostenlos entdecken</a>
     </div>
 
     <div class="legal-link">

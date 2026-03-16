@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ratgeber für Vermieter | Hauser</title>
-  <meta name="description" content="Ratgeber für Vermieter: Nebenkosten, Mietrecht, Kaution, Kündigung und mehr. Mit Hauser behalten Sie Mieter und Immobilien im Blick.">
+  <title>Ratgeber für Vermieter & Investoren | Hauser</title>
+  <meta name="description" content="Ratgeber für Vermieter und Immobilieninvestoren: Mietrecht, Kauf, Finanzierung, Kündigung und mehr. Nach Sektionen sortiert.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ratgeber für Vermieter | Hauser">
-  <meta property="og:description" content="Nebenkosten, Mietrecht, Kaution, Kündigung – kurze Erklärungen zu Themen für Vermieter.">
+  <meta property="og:description" content="Nebenkosten, Mietrecht, Kaution, Kauf – kurze Erklärungen zu Themen für Vermieter und Investoren.">
   <meta property="og:url" content="https://hauser.app/ratgeber.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,23 +20,29 @@
     .nav a:hover{color:var(--teal-light)}
     .container{max-width:720px;margin:0 auto;padding:32px 20px 64px}
     h1{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,6vw,32px);color:var(--dark);margin-bottom:20px;line-height:1.25}
-    h2{font-size:clamp(16px,4vw,18px);color:var(--teal);margin-top:36px;margin-bottom:14px}
+    h2{font-size:clamp(18px,4vw,20px);color:var(--teal);margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(26,74,90,0.15)}
     p{margin-bottom:14px;color:var(--text)}
     a{color:var(--teal)}
     .back{display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;font-weight:500;font-size:14px}
     .muted{font-size:13px;color:var(--text-muted)}
-    .intro{margin-bottom:36px;font-size:15px;line-height:1.8}
-    .ratgeber-grid{display:grid;gap:12px;margin-top:28px}
+    .intro{margin-bottom:40px;font-size:15px;line-height:1.8}
+    .ratgeber-section{margin-bottom:36px}
+    .ratgeber-grid{display:grid;gap:10px;margin-top:14px}
     .ratgeber-link{
-      display:block;padding:16px 20px;
-      background:var(--cream-dark);border-radius:12px;
+      display:block;padding:14px 18px;
+      background:var(--cream-dark);border-radius:10px;
       text-decoration:none;color:var(--text);
-      font-weight:500;font-size:15px;
+      font-weight:500;font-size:14px;
       transition:background 0.2s,color 0.2s;
       border:1px solid rgba(26,74,90,0.08);
     }
     .ratgeber-link:hover{background:rgba(26,74,90,0.06);color:var(--teal)}
-    .legal-link{margin-top:36px;padding-top:24px;border-top:1px solid rgba(26,74,90,0.15);display:flex;flex-wrap:wrap;gap:12px}
+    .ratgeber-cta{background:rgba(26,74,90,0.08);border-radius:12px;padding:28px;margin-top:40px;margin-bottom:32px;border-left:4px solid var(--teal);text-align:center}
+    .ratgeber-cta p{margin-bottom:20px}
+    .ratgeber-cta p:last-of-type{margin-bottom:0}
+    .cta-btn{display:inline-block;padding:14px 28px;background:var(--teal);color:white!important;font-weight:600;font-size:15px;border-radius:10px;text-decoration:none;margin-top:16px;transition:background 0.2s,transform 0.15s}
+    .cta-btn:hover{background:var(--teal-light);color:white!important;transform:translateY(-1px)}
+    .legal-link{margin-top:40px;padding-top:24px;border-top:1px solid rgba(26,74,90,0.15);display:flex;flex-wrap:wrap;gap:12px}
     .legal-link a{font-size:14px}
     footer{background:#0d0d0d;padding:48px 22px 32px;margin-top:48px}
     .footer-content{display:grid;gap:28px}
@@ -66,27 +72,75 @@
   </nav>
   <div class="container">
     <a href="index.html" class="back">← Zurück</a>
-    <h1>Ratgeber für Vermieter</h1>
-    <p class="muted">Typische Fragen · Hauser</p>
+    <h1>Ratgeber für Vermieter & Investoren</h1>
+    <p class="muted">Nach Themen sortiert · Hauser</p>
 
     <div class="intro">
-      <p>Als Vermieter stehen Sie vor vielen rechtlichen und organisatorischen Fragen: Nebenkostenabrechnung, Mieterhöhung, Kündigung, Kaution – die Themen sind vielfältig. In unseren Ratgeber-Artikeln finden Sie kurze, verständliche Erklärungen zu den wichtigsten Themen.</p>
+      <p>Als Vermieter oder Immobilieninvestor stehen Sie vor vielen rechtlichen und organisatorischen Fragen. In unseren Ratgeber-Artikeln finden Sie kurze, verständliche Erklärungen – sortiert nach Sektionen, damit Sie schnell finden, was Sie suchen.</p>
       <p>Die Artikel dienen der allgemeinen Information und ersetzen keine rechtliche Beratung. Bei individuellen Fällen empfehlen wir, einen Anwalt oder Steuerberater zu konsultieren.</p>
     </div>
 
-    <h2>Alle Ratgeber</h2>
-    <div class="ratgeber-grid">
-      <a href="nebenskostenabrechnung.html" class="ratgeber-link">Nebenkostenabrechnung</a>
-      <a href="mietpreisbremse.html" class="ratgeber-link">Mietpreisbremse</a>
-      <a href="mietvertrag-kuendigen.html" class="ratgeber-link">Mietvertrag kündigen</a>
-      <a href="mietvertrag-aufsetzen.html" class="ratgeber-link">Mietvertrag aufsetzen</a>
-      <a href="mietminderung.html" class="ratgeber-link">Mietminderung</a>
-      <a href="mieterhoehung.html" class="ratgeber-link">Mieterhöhung</a>
-      <a href="kaution.html" class="ratgeber-link">Kaution</a>
-      <a href="eigenbedarfskuendigung.html" class="ratgeber-link">Eigenbedarfskündigung</a>
-      <a href="schoenheitsreparaturen.html" class="ratgeber-link">Schönheitsreparaturen</a>
-      <a href="immobilienverwaltung-tools.html" class="ratgeber-link">Immobilienverwaltung & Tools</a>
-      <a href="faq.html" class="ratgeber-link">FAQ</a>
+    <div class="ratgeber-section">
+      <h2>Mietvertrag & Verwaltung</h2>
+      <div class="ratgeber-grid">
+        <a href="mietvertrag-aufsetzen.html" class="ratgeber-link">Mietvertrag aufsetzen</a>
+        <a href="nebenskostenabrechnung.html" class="ratgeber-link">Nebenkostenabrechnung</a>
+        <a href="immobilienverwaltung-tools.html" class="ratgeber-link">Immobilienverwaltung & Tools</a>
+        <a href="hausordnung.html" class="ratgeber-link">Hausordnung</a>
+      </div>
+    </div>
+
+    <div class="ratgeber-section">
+      <h2>Miete & Finanzen</h2>
+      <div class="ratgeber-grid">
+        <a href="mieterhoehung.html" class="ratgeber-link">Mieterhöhung</a>
+        <a href="mietpreisbremse.html" class="ratgeber-link">Mietpreisbremse</a>
+        <a href="mietminderung.html" class="ratgeber-link">Mietminderung</a>
+        <a href="kaution.html" class="ratgeber-link">Kaution</a>
+        <a href="zahlungsverzug.html" class="ratgeber-link">Zahlungsverzug & Mietnomaden</a>
+      </div>
+    </div>
+
+    <div class="ratgeber-section">
+      <h2>Kündigung & Räumung</h2>
+      <div class="ratgeber-grid">
+        <a href="mietvertrag-kuendigen.html" class="ratgeber-link">Mietvertrag kündigen</a>
+        <a href="eigenbedarfskuendigung.html" class="ratgeber-link">Eigenbedarfskündigung</a>
+        <a href="ausserordentliche-kuendigung.html" class="ratgeber-link">Außerordentliche Kündigung</a>
+        <a href="raeumungsklage.html" class="ratgeber-link">Räumungsklage</a>
+      </div>
+    </div>
+
+    <div class="ratgeber-section">
+      <h2>Instandhaltung & Reparaturen</h2>
+      <div class="ratgeber-grid">
+        <a href="schoenheitsreparaturen.html" class="ratgeber-link">Schönheitsreparaturen</a>
+        <a href="instandhaltungspflicht.html" class="ratgeber-link">Instandhaltungspflicht Vermieter</a>
+        <a href="maengelbehebung.html" class="ratgeber-link">Mängelbehebung</a>
+      </div>
+    </div>
+
+    <div class="ratgeber-section">
+      <h2>Kauf & Investment</h2>
+      <div class="ratgeber-grid">
+        <a href="immobilienkauf-checkliste.html" class="ratgeber-link">Immobilienkauf Checkliste</a>
+        <a href="finanzierung-immobilienkauf.html" class="ratgeber-link">Finanzierung Immobilienkauf</a>
+        <a href="rendite-berechnen.html" class="ratgeber-link">Rendite berechnen</a>
+        <a href="steuern-immobilienkauf.html" class="ratgeber-link">Steuern beim Immobilienkauf</a>
+        <a href="due-diligence.html" class="ratgeber-link">Due Diligence beim Kauf</a>
+      </div>
+    </div>
+
+    <div class="ratgeber-section">
+      <h2>Sonstiges</h2>
+      <div class="ratgeber-grid">
+        <a href="faq.html" class="ratgeber-link">FAQ</a>
+      </div>
+    </div>
+
+    <div class="ratgeber-cta">
+      <p><strong>Hauser entdecken</strong> – die App für Vermieter. Portfolio, Mieter, Finanzen – alles im Blick. Für immer kostenlos.</p>
+      <a href="index.html" class="cta-btn">Hauser kostenlos entdecken</a>
     </div>
 
     <div class="legal-link">
