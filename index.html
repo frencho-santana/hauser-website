@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hauser – Dein Immobilienportfolio. Klar im Blick.</title>
+<meta name="description" content="Hauser – die App für Vermieter. Dein Immobilienportfolio mit allen Objekten, Mietern und Finanzen. Für immer kostenlos.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hauser – Dein Immobilienportfolio. Klar im Blick.">
+<meta property="og:description" content="Die App für Vermieter. Portfolio, Mieter, Finanzen – alles im Blick. Für immer kostenlos.">
+<meta property="og:image" content="https://hauser.app/logo.png">
+<meta property="og:url" content="https://hauser.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hauser – Dein Immobilienportfolio">
+<meta name="twitter:description" content="Die App für Vermieter. Portfolio, Mieter, Finanzen – alles im Blick. Für immer kostenlos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -254,6 +263,30 @@ nav{
 }
 .fc-text{font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted)}
 
+/* ── RATGEBER ── */
+.ratgeber-grid{
+  display:grid;gap:12px;margin-top:24px;
+}
+.ratgeber-link{
+  display:block;padding:16px 20px;
+  background:var(--cream-dark);border-radius:12px;
+  text-decoration:none;color:var(--text);
+  font-weight:500;font-size:15px;
+  transition:background 0.2s,color 0.2s;
+  border:1px solid rgba(26,74,90,0.08);
+}
+.ratgeber-link:hover{background:rgba(26,74,90,0.06);color:var(--teal)}
+.ratgeber-link span{color:var(--teal);font-size:0.9em}
+.ratgeber-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:20px;padding:14px 24px;
+  background:var(--teal);color:white;
+  border-radius:12px;font-size:15px;font-weight:600;
+  text-decoration:none;transition:all 0.2s;
+  box-shadow:0 6px 20px rgba(26,74,90,0.25);
+}
+.ratgeber-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(26,74,90,0.35);color:white}
+
 /* ── GALLERY ── */
 .gallery{padding:72px 0;background:var(--dark);overflow:hidden}
 .gallery-inner{padding:0 22px;margin-bottom:32px}
@@ -479,6 +512,9 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
 .footer-links{
   display:grid;grid-template-columns:1fr 1fr;
   gap:28px;margin-bottom:36px;
+}
+@media(min-width:600px){
+  .footer-links{grid-template-columns:1fr 1fr 1fr}
 }
 .footer-col h4{
   font-size:11px;font-weight:600;
@@ -811,6 +847,14 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
   </div>
 </section>
 
+<!-- RATGEBER TEASER -->
+<section class="section reveal" id="ratgeber">
+  <div class="sec-eyebrow">Für Vermieter</div>
+  <h2 class="sec-title">Ratgeber.<br><em>Typische Fragen.</em></h2>
+  <p class="sec-sub">Nebenkosten, Mietrecht, Kaution, Kündigung – kurze Erklärungen zu Themen, die Vermieter oft beschäftigen. Mit Hauser behalten Sie Mieter und Immobilien im Blick.</p>
+  <a href="ratgeber.html" class="ratgeber-cta">Alle Ratgeber anzeigen →</a>
+</section>
+
 <!-- NOTIFY / CTA -->
 <section class="cta-section" id="contact">
   <h2 class="cta-title">Hauser<br><em>demnächst.</em></h2>
@@ -844,6 +888,8 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
           <li><a href="#features">Features</a></li>
           <li><a href="#screens">Screenshots</a></li>
           <li><a href="#pricing">Preise</a></li>
+          <li><a href="ratgeber.html">Ratgeber</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">

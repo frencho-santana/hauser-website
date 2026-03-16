@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immobilienverwaltung & Tools: Worauf achten? | Hauser</title>
+  <meta name="description" content="Immobilienverwaltung: Aufgaben, Herausforderungen und worauf Sie bei Verwaltungstools achten sollten. Hauser als Lösung für Vermieter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--teal:#1a4a5a;--teal-light:#2d8fa8;--cream:#f4f1ec;--dark:#141414;--text:#2c2c2c;--text-muted:#7a7a7a}
+    body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;word-wrap:break-word}
+    .nav{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(26,74,90,0.1);background:rgba(244,241,236,0.98)}
+    .nav a{color:var(--teal);text-decoration:none;font-weight:600;font-size:14px}
+    .nav a:hover{color:var(--teal-light)}
+    .container{max-width:720px;margin:0 auto;padding:32px 20px 64px}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,6vw,32px);color:var(--dark);margin-bottom:20px;line-height:1.25}
+    h2{font-size:clamp(16px,4vw,18px);color:var(--teal);margin-top:32px;margin-bottom:10px}
+    h3{font-size:15px;font-weight:600;color:var(--dark);margin-top:24px;margin-bottom:8px}
+    p{margin-bottom:14px;color:var(--text)}
+    ul{margin:0 0 14px 20px;padding-left:20px}
+    li{margin-bottom:6px}
+    a{color:var(--teal)}
+    .back{display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;font-weight:500;font-size:14px}
+    .hauser-cta{background:rgba(26,74,90,0.08);border-radius:12px;padding:20px;margin:28px 0;border-left:4px solid var(--teal)}
+    .hauser-cta p:last-child{margin-bottom:0}
+    .cta-with-img{display:flex;flex-direction:column;gap:20px;align-items:center}
+    .cta-with-img .hauser-cta{flex:1;width:100%}
+    .screenshot-mini{width:min(140px,40vw);flex-shrink:0;border-radius:20px;overflow:hidden;box-shadow:0 12px 32px rgba(26,74,90,0.2)}
+    .screenshot-mini img{width:100%;display:block}
+    .legal-link{margin-top:28px;padding-top:20px;border-top:1px solid rgba(26,74,90,0.15);display:flex;flex-wrap:wrap;gap:12px}
+    .legal-link a{font-size:14px}
+    .muted{font-size:13px;color:var(--text-muted)}
+    .info-box{background:rgba(26,74,90,0.06);border-radius:10px;padding:16px;margin:20px 0;border:1px solid rgba(26,74,90,0.12)}
+    .check-list li{list-style:none;padding-left:24px;position:relative}
+    .check-list li::before{content:'✓';position:absolute;left:0;color:var(--teal);font-weight:600}
+    @media(min-width:600px){
+      .container{padding:48px 28px 80px}
+      .nav{padding:16px 24px}
+      .nav a{font-size:15px}
+      .cta-with-img{flex-direction:row;align-items:flex-start}
+      .screenshot-mini{width:160px}
+    }
+    footer{background:#0d0d0d;padding:48px 22px 32px;margin-top:48px}
+    .footer-content{display:grid;gap:28px}
+    .footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:12px}
+    .footer-logo-icon{width:34px;height:34px;border-radius:22%;overflow:hidden;flex-shrink:0}
+    .footer-logo-icon img{width:100%;height:100%;object-fit:cover}
+    .footer-logo-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:white}
+    .footer-logo-name span{color:#2d8fa8}
+    .footer-tagline{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.65;max-width:260px}
+    .footer-links{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .footer-col h4{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:9px}
+    .footer-col ul li a{text-decoration:none;font-size:13px;color:rgba(255,255,255,0.45);transition:color 0.2s}
+    .footer-col ul li a:hover{color:white}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;color:rgba(255,255,255,0.35)}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">← Zurück zu Hauser</a>
+  </nav>
+  <div class="container">
+    <a href="index.html" class="back">← Zurück</a>
+    <h1>Immobilienverwaltung & Tools: Worauf achten?</h1>
+    <p class="muted">Ratgeber für Vermieter · Hauser</p>
+
+    <p>Ob eine oder mehrere Wohnungen – die Verwaltung von Mietimmobilien bringt viele Aufgaben mit sich. Wer den Überblick verliert, riskiert verpasste Fristen, Streit mit Mietern und unnötigen Stress. Hier erfahren Sie, was zur Immobilienverwaltung gehört und worauf Sie bei Tools achten sollten.</p>
+
+    <h2>Was gehört zur Immobilienverwaltung?</h2>
+    <p>Als Vermieter müssen Sie verschiedene Bereiche im Blick behalten:</p>
+    <ul>
+      <li><strong>Mieter & Verträge:</strong> Mietbeginn, Kalt- und Warmmiete, Kaution, Kündigungsfristen</li>
+      <li><strong>Finanzen:</strong> Mieteinnahmen, Nebenkostenabrechnung, Finanzierung (Restschuld, Zinsen, Raten)</li>
+      <li><strong>Objekt-Daten:</strong> Adresse, Fläche, Wert, Einheiten, Rendite</li>
+      <li><strong>Fristen:</strong> Nebenkostenabrechnung (12 Monate), Mieterhöhung (3 Monate Vorlauf), Kündigungen</li>
+      <li><strong>Historie:</strong> Renovierungen, Mängelmeldungen, Ereignisse pro Einheit</li>
+    </ul>
+    <p>Je mehr Objekte und Mieter, desto schwieriger wird es, alles in Excel oder im Kopf zu behalten. Fehlende Dokumentation kann bei Steuerprüfungen oder Streitfällen problematisch werden.</p>
+
+    <h2>Warum Tools zur Verwaltung nutzen?</h2>
+    <p>Eine strukturierte Verwaltung spart Zeit, reduziert Fehler und schafft Transparenz. Statt Zettelwirtschaft oder verstreute Notizen haben Sie alle Daten an einem Ort – jederzeit abrufbar, auch unterwegs. Das hilft bei:</p>
+    <ul>
+      <li>Übersicht über Cashflow und Portfolio-Wert</li>
+      <li>Rechtzeitige Erinnerung an Fristen (Nebenkosten, Mieterhöhung)</li>
+      <li>Schnelle Kontaktaufnahme mit Mietern (Telefon, E-Mail direkt aus der App)</li>
+      <li>Dokumentation für Steuerberater oder bei Verkauf</li>
+    </ul>
+
+    <h2>Worauf bei Verwaltungstools achten?</h2>
+    <p>Nicht jedes Tool passt zu jedem Vermieter. Diese Punkte sind wichtig:</p>
+
+    <h3>Übersichtlichkeit</h3>
+    <p>Kann ich auf einen Blick sehen, wie viele Objekte ich habe, was sie wert sind und wie der monatliche Cashflow aussieht? Oder muss ich mich durch Menüs klicken? Ein gutes Tool zeigt das Wesentliche sofort.</p>
+
+    <h3>Keine künstlichen Limits</h3>
+    <p>Manche Apps begrenzen die Anzahl der Immobilien oder Einheiten im kostenlosen Tarif. Für Vermieter mit mehreren Objekten ist das unpraktisch. Prüfen Sie, ob unbegrenzte Einträge möglich sind.</p>
+
+    <h3>Finanzierung im Blick</h3>
+    <p>Restschulden, Zinsen und Raten gehören zur Immobilienverwaltung dazu. Ein Tool sollte Darlehen pro Objekt erfassen und den Überblick über die Gesamtverschuldung ermöglichen.</p>
+
+    <h3>Mieter & Einheiten verknüpft</h3>
+    <p>Jede Einheit hat ihre eigenen Mieter, Mieten und Ereignisse. Die Verwaltung sollte pro Einheit funktionieren – nicht nur pro Objekt. So behalten Sie die Historie (Renovierungen, Mängel) im Blick.</p>
+
+    <h3>Datenschutz & Sicherheit</h3>
+    <p>Sie speichern sensible Daten: Mieteradressen, Mietverträge, Finanzen. Das Tool sollte Daten verschlüsselt speichern und keine Weitergabe an Dritte vornehmen. Prüfen Sie die Datenschutzerklärung.</p>
+
+    <h3>Kosten</h3>
+    <p>Viele Vermieter wollen nicht monatlich zahlen. Ein kostenloses Basis-Angebot ohne Kreditkarten-Pflicht ist fair – Pro-Features können optional dazu kommen.</p>
+
+    <div class="info-box">
+      <strong>Checkliste:</strong> Übersichtlich · Unbegrenzte Objekte · Finanzierungs-Tracking · Mieter pro Einheit · Datenschutz · Kostenlose Basis-Version
+    </div>
+
+    <h2>Hauser als Lösung</h2>
+    <div class="cta-with-img">
+      <div class="hauser-cta">
+        <p><strong>Hauser</strong> wurde genau für diese Anforderungen entwickelt: Portfolio-Übersicht mit Eigenkapital und Cashflow, unbegrenzte Immobilien und Einheiten, Finanzierungs-Tracking (Restschulden, Zinsen, Raten), Mieter-Verwaltung pro Einheit mit Aufgaben-Historie, Objekt-Details mit Karte – und die Basis-Version ist <strong>für immer kostenlos</strong>. Keine Kreditkarte nötig. Ideal für Vermieter, die ihre Immobilien klar und strukturiert verwalten wollen. <a href="index.html">Hauser entdecken →</a></p>
+      </div>
+      <div class="screenshot-mini">
+        <img src="screenshot-portfolio.png" alt="Hauser – Portfolio">
+      </div>
+    </div>
+
+    <p class="muted">Hinweis: Dieser Artikel dient der allgemeinen Information. Hauser befindet sich derzeit in Entwicklung und wird demnächst für iPhone verfügbar sein.</p>
+
+    <div class="legal-link">
+      <a href="index.html">Zur Startseite</a>
+      <a href="ratgeber.html">Alle Ratgeber</a>
+      <a href="faq.html">FAQ</a>
+      <a href="nebenskostenabrechnung.html">Nebenkostenabrechnung</a>
+      <a href="mietvertrag-aufsetzen.html">Mietvertrag aufsetzen</a>
+      <a href="kaution.html">Kaution</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <div class="footer-logo-icon"><img src="logo.png" alt="Hauser"></div>
+          <span class="footer-logo-name">Hau<span>ser</span></span>
+        </a>
+        <p class="footer-tagline">Dein Immobilienportfolio.<br>Klar im Blick. Für immer kostenlos.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>App</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#screens">Screenshots</a></li>
+            <li><a href="index.html#pricing">Preise</a></li>
+            <li><a href="ratgeber.html">Ratgeber</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz-app.html">Datenschutz App</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hauser. Alle Rechte vorbehalten.</span>
+      <span>Entwickelt in Deutschland 🇩🇪</span>
+    </div>
+  </footer>
+</body>
+</html>
