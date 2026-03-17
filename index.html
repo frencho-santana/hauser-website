@@ -337,10 +337,12 @@ nav{
 .pricing-stack{display:flex;flex-direction:column;gap:16px;margin-top:36px}
 
 .price-card{
+  display:flex;flex-direction:column;
   background:white;border-radius:20px;
   padding:28px 24px;
   border:1.5px solid rgba(26,74,90,0.08);
 }
+.price-card .btn-plan{margin-top:auto}
 
 /* Free card highlight */
 .price-card.free-card{
@@ -353,6 +355,7 @@ nav{
 }
 .free-forever-tag{
   display:inline-flex;align-items:center;gap:6px;
+  align-self:flex-start;
   background:rgba(46,139,110,0.1);
   border:1px solid rgba(46,139,110,0.25);
   border-radius:20px;padding:4px 12px;
@@ -377,6 +380,7 @@ nav{
 
 .pro-soon-tag{
   display:inline-flex;align-items:center;gap:6px;
+  align-self:flex-start;
   background:rgba(255,255,255,0.12);
   border:1px solid rgba(255,255,255,0.2);
   border-radius:20px;padding:5px 13px;
@@ -456,7 +460,7 @@ nav{
 
 /* ── CTA ── */
 .cta-section{
-  background:var(--dark);padding:72px 22px;
+  background:var(--dark);padding:100px 22px;
   text-align:center;position:relative;overflow:hidden;
 }
 .cta-section::before{
@@ -559,11 +563,11 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
   .free-callout{padding:24px}
   .features-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .gallery{padding:90px 0}
-  .gallery-inner{padding:0 48px}
-  .screens-scroll{padding:4px 48px 20px}
-  .screen-item{width:min(220px,35vw)}
+  .gallery-inner{padding:0 48px;max-width:1140px;margin:0 auto;text-align:center}
+  .screens-scroll{padding:4px 48px 20px;max-width:960px;margin:0 auto;justify-content:center}
+  .screen-item{width:220px}
   .pricing{padding:90px 48px}
-  .pricing-stack{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+  .pricing-stack{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
   footer{padding:60px 48px 36px}
   .footer-content{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
   .footer-links{margin-bottom:0}
@@ -580,8 +584,9 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
   .hero-coming,.free-pill,.hero-roadmap{margin-left:0;justify-content:flex-start}
   .phone-showcase{margin-top:0;flex-shrink:0}
   .section{padding:100px 72px;max-width:1140px;margin:0 auto}
-  .cta-section{padding:90px 72px}
-  footer{padding:64px 72px 40px;max-width:1140px;margin:0 auto}
+  .cta-section{padding:120px 72px}
+  footer{padding:64px 72px 40px}
+  .footer-content,.footer-bottom{max-width:1140px;margin-left:auto;margin-right:auto}
 }
 </style>
 </head>
@@ -837,6 +842,7 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
         Pro-Features sind in Entwicklung. Was genau dazukommt, entscheiden wir gemeinsam mit unseren ersten Nutzern.
       </p>
       <div class="pro-teaser">
+        <div class="pro-teaser-item">Bankkonten anbinden</div>
         <div class="pro-teaser-item">Steuerberater-Export</div>
         <div class="pro-teaser-item">Erweiterte Analysen & Charts</div>
         <div class="pro-teaser-item">Cloud-Backup & Sync</div>
