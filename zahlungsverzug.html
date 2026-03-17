@@ -6,7 +6,10 @@
   <title>Zahlungsverzug & Mietnomaden: Was tun? | Hauser</title>
   <meta name="description" content="Zahlungsverzug: Mahnung, Kündigung, Räumung. So reagieren Vermieter bei Mietnomaden. Mit Hauser behalten Sie Mieteinnahmen im Blick.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"Zahlungsverzug & Mietnomaden: Was tun?","description":"Zahlungsverzug: Mahnung, Kündigung, Räumung. So reagieren Vermieter bei Mietnomaden. Mit Hauser behalten Sie Mieteinnahmen im Blick.","author":{"@type":"Organization","name":"Hauser"},"publisher":{"@type":"Organization","name":"Hauser","logo":{"@type":"ImageObject","url":"https://hauser.app/logo.png"}},"datePublished":"2025-01-01","dateModified":"2025-01-01","mainEntityOfPage":{"@type":"WebPage","@id":"https://hauser.app/zahlungsverzug.html"}}
+  {"@context":"https://schema.org","@type":"Article","headline":"Zahlungsverzug & Mietnomaden: Was tun?","description":"Zahlungsverzug: Mahnung, Kündigung, Räumung. So reagieren Vermieter bei Mietnomaden. Mit Hauser behalten Sie Mieteinnahmen im Blick.","author":{"@type":"Organization","name":"Hauser"},"publisher":{"@type":"Organization","name":"Hauser","logo":{"@type":"ImageObject","url":"https://hauser.app/logo.png"}},"datePublished":"2025-01-01","dateModified":"2025-01-01","mainEntityOfPage":{"@type":"WebPage","@id":"https://hauser.app/zahlungsverzug.html"},"timeRequired":"PT4M","wordCount":420}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://hauser.app/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://hauser.app/ratgeber.html"},{"@type":"ListItem","position":3,"name":"Zahlungsverzug","item":"https://hauser.app/zahlungsverzug.html"}]}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -30,10 +33,23 @@
     .hauser-cta p{margin-bottom:0}
     .cta-btn{display:inline-block;padding:14px 28px;background:var(--teal);color:white!important;font-weight:600;font-size:15px;border-radius:10px;text-decoration:none;margin-top:16px;transition:background 0.2s,transform 0.15s}
     .cta-btn:hover{background:var(--teal-light);color:white!important;transform:translateY(-1px)}
-    .cta-with-img{display:flex;flex-direction:column;gap:20px;align-items:center}
+    .cta-with-img{display:flex;flex-direction:column;gap:20px;align-items:center;margin-bottom:28px}
     .cta-with-img .hauser-cta{flex:1;width:100%}
-    .screenshot-mini{width:min(140px,40vw);flex-shrink:0;border-radius:20px;overflow:hidden;box-shadow:0 12px 32px rgba(26,74,90,0.2)}
-    .screenshot-mini img{width:100%;display:block}
+    .screenshot-mini{width:min(140px,40vw);flex-shrink:0}
+    .phone-frame-mini{background:#111;border-radius:24px;padding:6px;box-shadow:0 12px 32px rgba(0,0,0,0.3)}
+    .phone-frame-mini .screen-notch{width:40px;height:10px;background:#111;border-radius:0 0 6px 6px;margin:0 auto;margin-top:-6px;position:relative;z-index:1}
+    .phone-frame-mini img{width:100%;display:block;border-radius:18px}
+    .breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:12px}
+    .breadcrumb a{color:var(--teal);text-decoration:none}
+    .breadcrumb a:hover{color:var(--teal-light)}
+    .breadcrumb span{color:var(--text-muted);margin:0 6px}
+    .reading-time{font-size:13px;color:var(--text-muted);margin-bottom:20px;display:block}
+    .related-articles{margin-top:36px;padding-top:24px;border-top:1px solid rgba(26,74,90,0.15)}
+    .related-articles h3{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:12px}
+    .related-articles ul{list-style:none;margin:0;padding:0}
+    .related-articles li{margin-bottom:8px}
+    .related-articles a{font-size:14px;text-decoration:none}
+    .related-articles a:hover{text-decoration:underline}
     .legal-link{margin-top:28px;padding-top:20px;border-top:1px solid rgba(26,74,90,0.15);display:flex;flex-wrap:wrap;gap:12px}
     .legal-link a{font-size:14px}
     .muted{font-size:13px;color:var(--text-muted)}
@@ -77,9 +93,14 @@
     <a href="index.html">← Zurück zu Hauser</a>
   </nav>
   <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Startseite</a><span>→</span>
+      <a href="ratgeber.html">Ratgeber</a><span>→</span>
+      <span>Zahlungsverzug</span>
+    </nav>
     <a href="index.html" class="back">← Zurück</a>
     <h1>Zahlungsverzug & Mietnomaden: Was tun?</h1>
-    <p class="muted">Ratgeber für Vermieter · Hauser</p>
+    <span class="reading-time">ca. 4 Min. Lesezeit</span>
 
     <p>Wenn Mieter die Miete nicht zahlen, ist schnelles Handeln gefragt. Wer zu lange wartet, riskiert hohe Ausfälle. Hier die wichtigsten Schritte: Mahnung, Kündigung, Räumung – und wie Sie sich absichern können.</p>
 
@@ -108,18 +129,27 @@
         <a href="index.html" class="cta-btn">Hauser kostenlos entdecken</a>
       </div>
       <div class="screenshot-mini">
-        <img src="screenshot-portfolio.png" alt="Hauser – Portfolio">
+        <div class="phone-frame-mini">
+          <div class="screen-notch"></div>
+          <img src="screenshot-portfolio.png" alt="Hauser – Portfolio">
+        </div>
       </div>
     </div>
 
     <p class="muted">Hinweis: Dieser Artikel dient der allgemeinen Information. Bei Zahlungsverzug konsultieren Sie zeitnah einen Anwalt.</p>
 
+    <div class="related-articles">
+      <h3>Verwandte Artikel</h3>
+      <ul>
+        <li><a href="kaution.html">Kaution</a></li>
+        <li><a href="raeumungsklage.html">Räumungsklage</a></li>
+        <li><a href="ausserordentliche-kuendigung.html">Außerordentliche Kündigung</a></li>
+      </ul>
+    </div>
+
     <div class="legal-link">
-      <a href="index.html">Zur Startseite</a>
+      <a href="index.html">Startseite</a>
       <a href="ratgeber.html">Alle Ratgeber</a>
-      <a href="raeumungsklage.html">Räumungsklage</a>
-      <a href="ausserordentliche-kuendigung.html">Außerordentliche Kündigung</a>
-      <a href="kaution.html">Kaution</a>
       <a href="faq.html">FAQ</a>
     </div>
   </div>

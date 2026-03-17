@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Sitemap für Suchmaschinen
 Sitemap: https://hauser.app/sitemap.xml

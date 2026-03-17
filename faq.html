@@ -13,6 +13,8 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hauser.app/faq.html"},
+    "publisher": {"@type": "Organization", "name": "Hauser", "logo": {"@type": "ImageObject", "url": "https://hauser.app/logo.png"}},
     "mainEntity": [
       {"@type": "Question", "name": "Wann ist Hauser verfügbar?", "acceptedAnswer": {"@type": "Answer", "text": "Hauser befindet sich derzeit in Entwicklung. Zuerst erscheint die App für iPhone, danach für iPad und später für Web. Die Basis-Version wird für immer kostenlos bleiben."}},
       {"@type": "Question", "name": "Für welche Geräte gibt es Hauser?", "acceptedAnswer": {"@type": "Answer", "text": "Geplant sind: iPhone (zuerst), iPad und Web. So kannst du dein Portfolio unterwegs und am Schreibtisch im Blick behalten."}},
@@ -59,11 +61,10 @@
     .faq-screens{
       display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
     }
-    .faq-screen{
-      width:min(160px,42vw);border-radius:24px;overflow:hidden;
-      box-shadow:0 16px 40px rgba(26,74,90,0.18);
-    }
-    .faq-screen img{width:100%;display:block}
+    .faq-screen{width:min(160px,42vw);flex-shrink:0}
+    .phone-frame-mini{background:#111;border-radius:24px;padding:6px;box-shadow:0 12px 32px rgba(0,0,0,0.3)}
+    .phone-frame-mini .screen-notch{width:40px;height:10px;background:#111;border-radius:0 0 6px 6px;margin:0 auto;margin-top:-6px;position:relative;z-index:1}
+    .phone-frame-mini img{width:100%;display:block;border-radius:18px}
     .faq-cta{
       background:rgba(26,74,90,0.08);
       border-radius:12px;
@@ -125,13 +126,22 @@
       <p>Hauser ist die App für Vermieter – dein Immobilienportfolio, klar im Blick. Hier beantworten wir die häufigsten Fragen.</p>
       <div class="faq-screens">
         <div class="faq-screen">
-          <img src="screenshot-portfolio.png" alt="Hauser Portfolio">
+          <div class="phone-frame-mini">
+            <div class="screen-notch"></div>
+            <img src="screenshot-portfolio.png" alt="Hauser Portfolio">
+          </div>
         </div>
         <div class="faq-screen">
-          <img src="screenshot-immobilien.png" alt="Hauser Immobilien">
+          <div class="phone-frame-mini">
+            <div class="screen-notch"></div>
+            <img src="screenshot-immobilien.png" alt="Hauser Immobilien">
+          </div>
         </div>
         <div class="faq-screen">
-          <img src="screenshot-einheit-mieter.png" alt="Hauser Mieter">
+          <div class="phone-frame-mini">
+            <div class="screen-notch"></div>
+            <img src="screenshot-einheit-mieter.png" alt="Hauser Mieter">
+          </div>
         </div>
       </div>
     </div>
