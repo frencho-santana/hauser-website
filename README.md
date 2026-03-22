@@ -31,7 +31,7 @@ Before going live, update:
 
 - **Impressum** (`impressum.html`): Add your company name, address, USt-IdNr.
 - **Datenschutz** (`datenschutz.html`): Add responsible party details
-- **Legal contact**: info@papas-kreditkarte.com (Papa Company UG)
+- **Legal contact**: info@hauser.app (Papa Company UG)
 
 ## License
 

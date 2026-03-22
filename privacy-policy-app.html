@@ -6,16 +6,37 @@
   <title>Data Privacy Policy – Hauser App</title>
   <meta name="description" content="Data privacy policy for the Hauser app: How we process, store and protect your property and tenant data.">
   <link rel="canonical" href="https://hauser.app/privacy-policy-app.html">
+  <link rel="alternate" hreflang="de" href="https://hauser.app/datenschutz-app.html">
+  <link rel="alternate" hreflang="en" href="https://hauser.app/privacy-policy-app.html">
+  <link rel="alternate" hreflang="x-default" href="https://hauser.app/datenschutz-app.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Data Privacy Policy – Hauser App">
+  <meta property="og:description" content="Data privacy policy for the Hauser app: How we process, store and protect your property and tenant data.">
+  <meta property="og:image" content="https://hauser.app/logo.png">
+  <meta property="og:url" content="https://hauser.app/privacy-policy-app.html">
+  <meta property="og:locale" content="en_US">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="nav.css" rel="stylesheet">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{--teal:#1a4a5a;--teal-light:#2d8fa8;--cream:#f4f1ec;--dark:#141414;--text:#2c2c2c;--text-muted:#7a7a7a}
-    body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8}
-    .nav{display:flex;align-items:center;padding:16px 24px;border-bottom:1px solid rgba(26,74,90,0.1);background:rgba(244,241,236,0.98)}
-    .nav a{color:var(--teal);text-decoration:none;font-weight:600;font-size:15px}
-    .nav a:hover{color:var(--teal-light)}
-    .container{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+    body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;overflow-x:hidden}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid rgba(26,74,90,0.1);background:rgba(244,241,236,0.98);flex-wrap:wrap;gap:10px}
+    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--dark);flex-shrink:0}
+    .nav-logo:hover{color:var(--teal)}
+    .nav-logo-icon{width:28px;height:28px;border-radius:22%;overflow:hidden;flex-shrink:0}
+    .nav-logo-icon img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:inherit}
+    .nav-logo-name span{color:var(--teal)}
+    .nav-links{display:flex;align-items:center;gap:14px;overflow-x:auto;scrollbar-width:none;flex:1;justify-content:center;margin:0 8px;min-width:0}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{color:var(--teal);text-decoration:none;font-size:13px;font-weight:500;white-space:nowrap}
+    .nav-links a:hover{color:var(--teal-light)}
+    .nav-badge{display:flex;align-items:center;gap:5px;background:rgba(26,74,90,0.08);border-radius:20px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--teal);letter-spacing:0.05em;flex-shrink:0}
+    .nav-badge-dot{width:5px;height:5px;border-radius:50%;background:#2d8fa8;animation:pulse 2s ease infinite}
+    @keyframes pulse{50%{opacity:.6}}
+    .container{max-width:720px;margin:0 auto;padding:48px var(--page-pad) 80px}
     h1{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--dark);margin-bottom:32px}
     h2{font-size:18px;color:var(--teal);margin-top:36px;margin-bottom:12px}
     h3{font-size:15px;font-weight:600;color:var(--dark);margin-top:24px;margin-bottom:8px}
@@ -27,10 +48,11 @@
     .back{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;font-weight:500}
     .legal-links{margin-top:32px;padding-top:24px;border-top:1px solid rgba(26,74,90,0.15)}
     .legal-links a{margin-right:16px}
-    table{border-collapse:collapse;width:100%;margin:16px 0}
+    .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0}
+    table{border-collapse:collapse;width:100%;min-width:480px}
     th,td{border:1px solid rgba(26,74,90,0.2);padding:12px;text-align:left;font-size:14px}
     th{background:rgba(26,74,90,0.06);font-weight:600}
-    footer{background:#0d0d0d;padding:48px 22px 32px;margin-top:48px}
+    footer{background:#0d0d0d;padding:48px var(--page-pad) 32px;margin-top:48px}
     .footer-content{display:grid;gap:28px}
     .footer-brand{margin-bottom:36px}
     .footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:12px}
@@ -39,28 +61,48 @@
     .footer-logo-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:white}
     .footer-logo-name span{color:#2d8fa8}
     .footer-tagline{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.65;max-width:260px}
+    .footer-nap{font-size:12px;color:rgba(255,255,255,0.4);margin-top:10px;line-height:1.5}
+    .footer-nap a{color:rgba(255,255,255,0.6);text-decoration:none}
+    .footer-nap a:hover{color:white}
     .footer-links{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:36px}
     .footer-col h4{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px}
     .footer-col ul{list-style:none;margin:0;padding:0}
     .footer-col ul li{margin-bottom:9px}
     .footer-col ul li a{text-decoration:none;font-size:13px;color:rgba(255,255,255,0.45);transition:color 0.2s}
     .footer-col ul li a:hover{color:white}
+    .footer-ctx{font-size:11px;color:rgba(255,255,255,0.35);font-weight:400}
     .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;font-size:11px;color:rgba(255,255,255,0.2);display:flex;flex-direction:column;gap:4px}
     @media(min-width:700px){
-      footer{padding:60px 48px 36px}
+      footer{padding:60px var(--page-pad-edge) 36px}
       .footer-content{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
       .footer-links{margin-bottom:0}
     }
     @media(min-width:1060px){
-      footer{padding:64px 72px 40px}
+      footer{padding:64px var(--page-pad-edge) 40px}
       .footer-content,.footer-bottom{max-width:1140px;margin-left:auto;margin-right:auto}
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <a href="index.html">← Back to Hauser</a>
-  </nav>
+  <header><nav class="site-nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="logo.png" alt="Hauser" width="34" height="34"></div>
+      <span class="nav-logo-name">Hau<span>ser</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="features.html">Features</a>
+      <a href="index.html#pricing">Preise</a>
+      <a href="ratgeber.html">Ratgeber</a>
+
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div class="nav-badge">
+      <div class="nav-badge-dot"></div>
+      Coming Soon
+    </div>
+  </nav></header>
+  <div class="nav-spacer"></div>
   <div class="container">
     <a href="index.html" class="back">← Back</a>
     <h1>Data Privacy Policy</h1>
@@ -75,7 +117,7 @@
       Pestelstr. 38<br>
       49324 Melle<br>
       Germany<br>
-      E-Mail: info@papas-kreditkarte.com
+      E-Mail: info@hauser.app
     </p>
 
     <h2>2. Overview of Data Processing</h2>
@@ -94,6 +136,7 @@
         <tr><td>Crash logs (if collected)</td><td>Stability improvement</td><td>Art. 6(1)(f) GDPR</td><td>Max. 30 days</td></tr>
       </tbody>
     </table>
+    </div>
 
     <h2>3. Detailed Description of Data Processing</h2>
     <h3>3.1 Account Registration and Authentication</h3>
@@ -134,7 +177,7 @@
     </ul>
     <p><strong>Account deletion:</strong> You can delete your account at any time within the App (Settings → Delete Account). This will permanently remove your account and associated data from our systems.</p>
     <p><strong>Complaint to supervisory authority:</strong> You have the right to lodge a complaint with a data protection supervisory authority. For Germany: The competent authority for our company is the Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover. For other EU countries: the supervisory authority of your place of residence.</p>
-    <p><strong>Contact:</strong> To exercise your rights, contact us at info@papas-kreditkarte.com. We will respond within one month.</p>
+    <p><strong>Contact:</strong> To exercise your rights, contact us at info@hauser.app. We will respond within one month.</p>
 
     <h2>7. Data Security</h2>
     <p>We implement appropriate technical and organizational measures to protect your data:</p>
@@ -169,18 +212,21 @@
     <div class="footer-content">
       <div class="footer-brand">
         <a href="index.html" class="footer-logo">
-          <div class="footer-logo-icon"><img src="logo.png" alt="Hauser"></div>
+          <div class="footer-logo-icon"><img src="logo.png" alt="Hauser" width="34" height="34" loading="lazy"></div>
           <span class="footer-logo-name">Hau<span>ser</span></span>
         </a>
         <p class="footer-tagline">Dein Immobilienportfolio.<br>Klar im Blick. Für immer kostenlos.</p>
+        <p class="footer-nap">Pestelstr. 38, 49324 Melle · <a href="mailto:info@hauser.app">info@hauser.app</a></p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
           <h4>App</h4>
           <ul>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#screens">Screenshots</a></li>
-            <li><a href="index.html#pricing">Preise</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="finanzen.html">Finanzen</a></li>
+            <li><a href="nebenskosten.html">Nebenskosten</a></li>
+            <li><a href="aufgaben.html">Aufgaben</a></li>
             <li><a href="ratgeber.html">Ratgeber</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
@@ -188,9 +234,10 @@
         <div class="footer-col">
           <h4>Rechtliches</h4>
           <ul>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="datenschutz.html">Datenschutz <span class="footer-ctx">Website</span></a></li>
+            <li><a href="datenschutz-app.html">Datenschutz <span class="footer-ctx">App</span></a></li>
             <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz-app.html">Datenschutz App</a></li>
+            <li><a href="agb.html">AGB</a></li>
           </ul>
         </div>
       </div>

@@ -3,16 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seite nicht gefunden – Hauser</title>
-  <meta name="robots" content="noindex">
+  <title>AGB – Allgemeine Geschäftsbedingungen | Hauser</title>
+  <meta name="description" content="Allgemeine Geschäftsbedingungen (AGB) für die Nutzung der Hauser App. Gültig für die Hauser Vermieter-App.">
+  <link rel="canonical" href="https://hauser.app/agb.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AGB – Allgemeine Geschäftsbedingungen | Hauser">
+  <meta property="og:description" content="Allgemeine Geschäftsbedingungen (AGB) für die Nutzung der Hauser App. Gültig für die Hauser Vermieter-App.">
+  <meta property="og:image" content="https://hauser.app/logo.png">
+  <meta property="og:url" content="https://hauser.app/agb.html">
+  <meta property="og:locale" content="de_DE">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="nav.css" rel="stylesheet">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{--teal:#1a4a5a;--teal-light:#2d8fa8;--cream:#f4f1ec;--dark:#141414;--text:#2c2c2c;--text-muted:#7a7a7a}
-    body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;min-height:100vh;display:flex;flex-direction:column}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(26,74,90,0.1);background:rgba(244,241,236,0.98);flex-wrap:wrap;gap:10px}
+    body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid rgba(26,74,90,0.1);background:rgba(244,241,236,0.98);flex-wrap:wrap;gap:10px}
     .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--dark);flex-shrink:0}
     .nav-logo:hover{color:var(--teal)}
     .nav-logo-icon{width:28px;height:28px;border-radius:22%;overflow:hidden;flex-shrink:0}
@@ -26,14 +33,19 @@
     .nav-badge{display:flex;align-items:center;gap:5px;background:rgba(26,74,90,0.08);border-radius:20px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--teal);letter-spacing:0.05em;flex-shrink:0}
     .nav-badge-dot{width:5px;height:5px;border-radius:50%;background:#2d8fa8;animation:pulse 2s ease infinite}
     @keyframes pulse{50%{opacity:.6}}
-    main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;text-align:center}
-    main h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,12vw,80px);font-weight:700;color:var(--teal);margin-bottom:16px;line-height:1}
-    main p{margin-bottom:24px;color:var(--text-muted);max-width:360px}
-    main a{color:var(--teal);font-weight:600;text-decoration:none}
-    main a:hover{color:var(--teal-light)}
-    .btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:14px 28px;background:var(--teal);color:white;border-radius:12px;font-size:15px;font-weight:600;transition:all 0.2s;box-shadow:0 6px 20px rgba(26,74,90,0.25)}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(26,74,90,0.35);color:white}
-    footer{background:#0d0d0d;padding:48px var(--page-pad) 32px}
+    .container{max-width:720px;margin:0 auto;padding:48px var(--page-pad) 80px}
+    h1{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--dark);margin-bottom:32px}
+    h2{font-size:18px;color:var(--teal);margin-top:32px;margin-bottom:12px}
+    p{margin-bottom:16px;color:var(--text)}
+    a{color:var(--teal)}
+    .breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+    .breadcrumb a{color:var(--teal);text-decoration:none}
+    .breadcrumb a:hover{color:var(--teal-light)}
+    .breadcrumb span{color:var(--text-muted);margin:0 6px}
+    .muted{font-size:14px;color:var(--text-muted)}
+    .legal-links{margin-top:32px;padding-top:24px;border-top:1px solid rgba(26,74,90,0.15)}
+    .legal-links a{margin-right:16px}
+    footer{background:#0d0d0d;padding:48px var(--page-pad) 32px;margin-top:48px}
     .footer-content{display:grid;gap:28px}
     .footer-brand{margin-bottom:36px}
     .footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:12px}
@@ -53,36 +65,68 @@
     .footer-col ul li a:hover{color:white}
     .footer-ctx{font-size:11px;color:rgba(255,255,255,0.35);font-weight:400}
     .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;font-size:11px;color:rgba(255,255,255,0.2);display:flex;flex-direction:column;gap:4px}
-    @media(min-width:600px){.nav{padding:16px 24px}}
     @media(min-width:700px){footer{padding:60px var(--page-pad-edge) 36px};.footer-content{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px};.footer-links{margin-bottom:0}}
     @media(min-width:1060px){footer{padding:64px var(--page-pad-edge) 40px};.footer-content,.footer-bottom{max-width:1140px;margin-left:auto;margin-right:auto}}
   </style>
 </head>
 <body>
-  <header>
-    <header><nav class="site-nav">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon"><img src="logo.png" alt="Hauser" width="34" height="34"></div>
-        <span class="nav-logo-name">Hau<span>ser</span></span>
-      </a>
-      <div class="nav-links">
-        <a href="features.html">Features</a>
-        <a href="index.html#pricing">Preise</a>
-        <a href="ratgeber.html">Ratgeber</a>
-        <a href="ueber-uns.html">Über uns</a>
-        <a href="kontakt.html">Kontakt</a>
-      </div>
-      <div class="nav-badge">
-        <div class="nav-badge-dot"></div>
-        Coming Soon
-      </div>
-    </nav></header>
+  <header><nav class="site-nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="logo.png" alt="Hauser" width="34" height="34"></div>
+      <span class="nav-logo-name">Hau<span>ser</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="features.html">Features</a>
+      <a href="index.html#pricing">Preise</a>
+      <a href="ratgeber.html">Ratgeber</a>
+
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div class="nav-badge">
+      <div class="nav-badge-dot"></div>
+      Coming Soon
+    </div>
+  </nav></header>
   <div class="nav-spacer"></div>
-  <main>
-    <h1>404</h1>
-    <p>Diese Seite existiert nicht oder wurde verschoben.</p>
-    <a href="index.html" class="btn">← Zur Startseite</a>
-  </main>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Startseite</a><span>→</span>
+      <span>AGB</span>
+    </nav>
+    <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+    <p class="muted">Stand: März 2026 · Hauser App</p>
+
+    <p><strong>Hinweis:</strong> Diese AGB sind eine Vorlage für die Hauser App. Sie sollten vor Inkrafttreten von einem Rechtsanwalt geprüft und an Ihr konkretes Angebot angepasst werden.</p>
+
+    <h2>§ 1 Geltungsbereich</h2>
+    <p>Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung der Hauser App („App“) und der zugehörigen Dienste. Anbieter ist die Papa Company UG (haftungsbeschränkt), Pestelstr. 38, 49324 Melle. Abweichende Bedingungen des Nutzers werden nicht anerkannt.</p>
+
+    <h2>§ 2 Vertragsgegenstand und Leistungsumfang</h2>
+    <p>Hauser ist eine App zur Verwaltung von Immobilienportfolios. Der Umfang der Leistungen ergibt sich aus der jeweiligen Produktbeschreibung und der gewählten Nutzungsvariante (kostenlose Basis-Version bzw. kostenpflichtige Pro-Features).</p>
+
+    <h2>§ 3 Vertragsschluss und Registrierung</h2>
+    <p>Der Vertrag kommt durch die Registrierung und Nutzung der App zustande. Der Nutzer stellt wahrheitsgemäße Angaben bereit. Die Nutzung setzt ein gültiges Nutzerkonto voraus.</p>
+
+    <h2>§ 4 Nutzungsrecht und -pflichten</h2>
+    <p>Dem Nutzer wird ein nicht-exklusives, räumlich und zeitlich unbeschränktes, nicht übertragbares Recht zur Nutzung der App im Rahmen des vereinbarten Umfangs eingeräumt. Der Nutzer verpflichtet sich, die App nur bestimmungsgemäß zu nutzen und keine unerlaubten Kopien zu erstellen.</p>
+
+    <h2>§ 5 Datenschutz</h2>
+    <p>Die Verarbeitung personenbezogener Daten erfolgt gemäß der Datenschutzerklärung für die Hauser App. Diese ist unter <a href="datenschutz-app.html">datenschutz-app.html</a> abrufbar.</p>
+
+    <h2>§ 6 Haftung</h2>
+    <p>Für leichte Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten und nur in Höhe des vorhersehbaren, typischerweise eintretenden Schadens. Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt. Die Haftung nach dem Produkthaftungsgesetz bleibt unberührt.</p>
+
+    <h2>§ 7 Schlussbestimmungen</h2>
+    <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Gerichtsstand für Streitigkeiten ist, soweit gesetzlich zulässig, der Sitz des Anbieters. Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</p>
+
+    <div class="legal-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="datenschutz-app.html">Datenschutz App</a>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-content">
       <div class="footer-brand">

@@ -1,0 +1,34 @@
+/* ── Unified Hauser Nav (alle Seiten) ── */
+:root{--page-pad:22px;--page-pad-edge:22px}
+@media(min-width:600px){:root{--page-pad:28px;--page-pad-edge:28px}}
+@media(min-width:700px){:root{--page-pad-edge:48px}}
+@media(min-width:900px){:root{--page-pad:36px;--page-pad-edge:48px}}
+@media(min-width:1060px){:root{--page-pad:48px;--page-pad-edge:72px}}
+
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 20px;
+  background:rgba(244,241,236,0.95);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(26,74,90,0.1);
+}
+.site-nav .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#141414}
+.site-nav .nav-logo:hover{color:#1a4a5a}
+.site-nav .nav-logo-icon{width:34px;height:34px;border-radius:22%;overflow:hidden;flex-shrink:0}
+.site-nav .nav-logo-icon img{width:100%;height:100%;object-fit:cover}
+.site-nav .nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:inherit}
+.site-nav .nav-logo-name span{color:#2d8fa8}
+.site-nav .nav-badge{display:flex;align-items:center;gap:6px;background:rgba(26,74,90,0.08);border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;color:#1a4a5a;letter-spacing:0.05em}
+.site-nav .nav-badge-dot{width:6px;height:6px;border-radius:50%;background:#2d8fa8;animation:navpulse 2s ease infinite}
+@keyframes navpulse{50%{opacity:.6}}
+.site-nav .nav-links{display:flex;align-items:center;gap:6px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;justify-content:flex-end;margin:0 16px}
+.site-nav .nav-links::-webkit-scrollbar{display:none}
+.site-nav .nav-links a{flex-shrink:0;padding:10px 12px;font-size:13px;font-weight:500;color:#1a4a5a;text-decoration:none;white-space:nowrap;border-radius:8px;transition:background .2s,color .2s;min-height:44px;display:inline-flex;align-items:center}
+.site-nav .nav-links a:hover{background:rgba(26,74,90,0.08);color:#1e6278}
+@media(min-width:900px){.site-nav .nav-links{gap:4px;overflow:visible;margin:0 24px}.site-nav .nav-links a{font-size:14px;padding:8px 14px;min-height:auto}}
+@media(min-width:600px){.site-nav{padding:16px var(--page-pad-edge)}}
+@media(min-width:1060px){.site-nav{padding:18px var(--page-pad-edge)}}
+.nav-spacer{height:72px;flex-shrink:0}
+@media(min-width:600px){.nav-spacer{height:76px}}

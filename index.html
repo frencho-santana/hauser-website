@@ -10,11 +10,20 @@
 <meta property="og:description" content="Die App für Vermieter. Portfolio, Mieter, Finanzen – alles im Blick. Für immer kostenlos.">
 <meta property="og:image" content="https://hauser.app/logo.png">
 <meta property="og:url" content="https://hauser.app/">
+<meta property="og:locale" content="de_DE">
+<link rel="canonical" href="https://hauser.app/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Hauser","url":"https://hauser.app","logo":"https://hauser.app/logo.png","address":{"@type":"PostalAddress","streetAddress":"Pestelstr. 38","postalCode":"49324","addressLocality":"Melle","addressCountry":"DE"},"contactPoint":{"@type":"ContactPoint","email":"info@hauser.app","contactType":"customer service","availableLanguage":"German","areaServed":"DE"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Hauser – Dein Immobilienportfolio. Klar im Blick.","description":"Die App für Vermieter. Portfolio, Mieter, Finanzen – alles im Blick. Für immer kostenlos.","url":"https://hauser.app/","publisher":{"@type":"Organization","name":"Hauser","logo":{"@type":"ImageObject","url":"https://hauser.app/logo.png"}}}
+</script>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hauser – Dein Immobilienportfolio">
 <meta name="twitter:description" content="Die App für Vermieter. Portfolio, Mieter, Finanzen – alles im Blick. Für immer kostenlos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="nav.css" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -36,43 +45,10 @@
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:13px 20px;
-  background:rgba(244,241,236,0.95);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(26,74,90,0.1);
-}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.nav-logo-icon{
-  width:34px;height:34px;border-radius:22%;overflow:hidden;
-  flex-shrink:0;
-}
-.nav-logo-icon img{width:100%;height:100%;object-fit:cover}
-.nav-logo-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:21px;font-weight:700;color:var(--dark);
-}
-.nav-logo-name span{color:var(--teal)}
-.nav-badge{
-  display:flex;align-items:center;gap:6px;
-  background:rgba(26,74,90,0.08);
-  border-radius:20px;padding:7px 14px;
-  font-size:12px;font-weight:600;color:var(--teal);
-  letter-spacing:0.05em;
-}
-.nav-badge-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--teal-light);
-  animation:pulse 2s ease infinite;
-}
-
 /* ── HERO ── */
 .hero{
   min-height:100svh;
-  padding:88px 22px 56px;
+  padding:88px var(--page-pad) 56px;
   position:relative;overflow:hidden;
   display:flex;flex-direction:column;align-items:center;
   text-align:center;
@@ -171,9 +147,14 @@ nav{
   opacity:0.82;
   transform:perspective(700px) rotateY(-5deg);
 }
+@media(max-width:480px){
+  .phone-showcase .phone-frame.side{display:none}
+  .phone-frame.main{width:min(200px,75vw)}
+}
+.phone-screen{overflow:hidden;aspect-ratio:9/19.5;display:block}
 .phone-screen img{
-  width:100%;display:block;
-  border-radius:30px;
+  width:100%;height:100%;object-fit:contain;object-position:top;
+  display:block;border-radius:30px;
 }
 
 /* ── USP STRIP ── */
@@ -200,7 +181,7 @@ nav{
 .usp-sub{font-size:12px;color:rgba(255,255,255,0.55)}
 
 /* ── SECTIONS ── */
-.section{padding:72px 22px}
+.section{padding:72px var(--page-pad)}
 .sec-eyebrow{
   font-size:11px;font-weight:600;
   letter-spacing:0.2em;text-transform:uppercase;
@@ -289,7 +270,7 @@ nav{
 
 /* ── GALLERY ── */
 .gallery{padding:72px 0;background:var(--dark);overflow:hidden}
-.gallery-inner{padding:0 22px;margin-bottom:32px}
+.gallery-inner{padding:0 var(--page-pad);margin-bottom:32px}
 .gallery-eyebrow{
   font-size:11px;font-weight:600;
   letter-spacing:0.2em;text-transform:uppercase;
@@ -327,13 +308,14 @@ nav{
   background:#111;border-radius:0 0 9px 9px;
   margin:0 auto;margin-top:-8px;position:relative;z-index:1;
 }
-.screen-frame img{width:100%;border-radius:28px;display:block}
+.screen-frame{aspect-ratio:9/19.5;overflow:hidden}
+.screen-frame img{width:100%;height:100%;object-fit:contain;object-position:top;border-radius:28px;display:block}
 .screen-caption{margin-top:14px;padding:0 4px}
 .screen-cap-title{font-size:13px;font-weight:600;color:white;margin-bottom:3px}
 .screen-cap-sub{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5}
 
 /* ── PRICING ── */
-.pricing{padding:72px 22px;background:var(--cream)}
+.pricing{padding:72px var(--page-pad);background:var(--cream)}
 .pricing-stack{display:flex;flex-direction:column;gap:16px;margin-top:36px}
 
 .price-card{
@@ -500,7 +482,7 @@ nav{
 .btn-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
 
 /* ── FOOTER ── */
-footer{background:#0d0d0d;padding:48px 22px 32px}
+footer{background:#0d0d0d;padding:48px var(--page-pad) 32px}
 .footer-brand{margin-bottom:36px}
 .footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:12px}
 .footer-logo-icon{
@@ -513,6 +495,9 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
 }
 .footer-logo-name span{color:var(--teal-light)}
 .footer-tagline{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.65;max-width:260px}
+.footer-nap{font-size:12px;color:rgba(255,255,255,0.4);margin-top:10px;line-height:1.5}
+.footer-nap a{color:rgba(255,255,255,0.6);text-decoration:none}
+.footer-nap a:hover{color:white}
 .footer-links{
   display:grid;grid-template-columns:1fr 1fr;
   gap:28px;margin-bottom:36px;
@@ -532,6 +517,7 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
   color:rgba(255,255,255,0.45);transition:color 0.2s;
 }
 .footer-col ul li a:hover{color:white}
+.footer-ctx{font-size:11px;color:rgba(255,255,255,0.35);font-weight:400}
 .footer-bottom{
   border-top:1px solid rgba(255,255,255,0.06);
   padding-top:24px;
@@ -552,40 +538,40 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
 
 /* ── DESKTOP ── */
 @media(min-width:700px){
-  nav{padding:16px 48px}
-  .hero{padding:106px 48px 72px}
+  nav{padding:16px var(--page-pad-edge)}
+  .hero{padding:106px var(--page-pad-edge) 72px}
   .phone-frame.main{width:240px}
   .phone-frame.side{width:196px}
-  .usp-strip{flex-direction:row;padding:24px 48px;gap:0}
+  .usp-strip{flex-direction:row;padding:24px var(--page-pad-edge);gap:0}
   .usp-item{flex:1;border-bottom:none;border-right:1px solid rgba(255,255,255,0.08);padding:0 24px}
   .usp-item:last-child{border-right:none}
-  .section{padding:90px 48px}
+  .section{padding:90px var(--page-pad-edge)}
   .free-callout{padding:24px}
   .features-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .gallery{padding:90px 0}
-  .gallery-inner{padding:0 48px;max-width:1140px;margin:0 auto;text-align:center}
-  .screens-scroll{padding:4px 48px 20px;max-width:960px;margin:0 auto;justify-content:center}
+  .gallery-inner{padding:0 var(--page-pad-edge);max-width:1140px;margin:0 auto;text-align:center}
+  .screens-scroll{padding:4px var(--page-pad-edge) 20px;max-width:960px;margin:0 auto;justify-content:center}
   .screen-item{width:220px}
-  .pricing{padding:90px 48px}
+  .pricing{padding:90px var(--page-pad-edge)}
   .pricing-stack{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
-  footer{padding:60px 48px 36px}
+  footer{padding:60px var(--page-pad-edge) 36px}
   .footer-content{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
   .footer-links{margin-bottom:0}
 }
 @media(min-width:1060px){
-  nav{padding:18px 72px}
+  nav{padding:18px var(--page-pad-edge)}
   .hero{
     flex-direction:row;text-align:left;
     align-items:center;justify-content:center;
-    gap:56px;padding:110px 72px 80px;
+    gap:56px;padding:110px var(--page-pad-edge) 80px;
     max-width:1180px;margin:0 auto;width:100%;
   }
   .hero-inner{max-width:480px;flex-shrink:0}
   .hero-coming,.free-pill,.hero-roadmap{margin-left:0;justify-content:flex-start}
   .phone-showcase{margin-top:0;flex-shrink:0}
-  .section{padding:100px 72px;max-width:1140px;margin:0 auto}
-  .cta-section{padding:120px 72px}
-  footer{padding:64px 72px 40px}
+  .section{padding:100px var(--page-pad-edge);max-width:1140px;margin:0 auto}
+  .cta-section{padding:120px var(--page-pad-edge)}
+  footer{padding:64px var(--page-pad-edge) 40px}
   .footer-content,.footer-bottom{max-width:1140px;margin-left:auto;margin-right:auto}
 }
 </style>
@@ -593,18 +579,25 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
 <body>
 
 <!-- NAV -->
-<nav>
+<header><nav class="site-nav">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-icon">
-      <img src="logo.png" alt="Hauser">
+      <img src="logo.png" alt="Hauser" width="34" height="34">
     </div>
     <span class="nav-logo-name">Hau<span>ser</span></span>
   </a>
+  <div class="nav-links">
+    <a href="features.html">Features</a>
+    <a href="#pricing">Preise</a>
+    <a href="ratgeber.html">Ratgeber</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
   <div class="nav-badge">
     <div class="nav-badge-dot"></div>
     Coming Soon
   </div>
-</nav>
+</nav></header>
 
 <!-- HERO -->
 <section class="hero">
@@ -638,12 +631,12 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
   <div class="phone-showcase">
     <div class="phone-frame side">
       <div class="phone-screen">
-        <img src="screenshot-portfolio.png" alt="Hauser App">
+        <img src="screenshot-portfolio.png" alt="Hauser App" width="260" height="565" loading="lazy">
       </div>
     </div>
     <div class="phone-frame main">
       <div class="phone-screen">
-        <img src="screenshot-immobilien.png" alt="Hauser App">
+        <img src="screenshot-immobilien.png" alt="Hauser App" width="260" height="565" loading="lazy">
       </div>
     </div>
   </div>
@@ -764,7 +757,7 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
     <div class="screen-item">
       <div class="screen-frame">
         <div class="screen-notch"></div>
-        <img src="screenshot-portfolio.png" alt="Hauser App">
+        <img src="screenshot-portfolio.png" alt="Hauser App" width="260" height="565" loading="lazy">
       </div>
       <div class="screen-caption">
         <div class="screen-cap-title">Portfolio</div>
@@ -774,7 +767,7 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
     <div class="screen-item">
       <div class="screen-frame">
         <div class="screen-notch"></div>
-        <img src="screenshot-immobilien.png" alt="Hauser App">
+        <img src="screenshot-immobilien.png" alt="Hauser App" width="260" height="565" loading="lazy">
       </div>
       <div class="screen-caption">
         <div class="screen-cap-title">Immobilien</div>
@@ -784,7 +777,7 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
     <div class="screen-item">
       <div class="screen-frame">
         <div class="screen-notch"></div>
-        <img src="screenshot-finanzierung.png" alt="Hauser App">
+        <img src="screenshot-finanzierung.png" alt="Hauser App" width="260" height="565" loading="lazy">
       </div>
       <div class="screen-caption">
         <div class="screen-cap-title">Finanzierung</div>
@@ -794,7 +787,7 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
     <div class="screen-item">
       <div class="screen-frame">
         <div class="screen-notch"></div>
-        <img src="screenshot-einheit-mieter.png" alt="Hauser App">
+        <img src="screenshot-einheit-mieter.png" alt="Hauser App" width="260" height="565" loading="lazy">
       </div>
       <div class="screen-caption">
         <div class="screen-cap-title">Einheit & Mieter</div>
@@ -881,29 +874,33 @@ footer{background:#0d0d0d;padding:48px 22px 32px}
     <div class="footer-brand">
       <a href="index.html" class="footer-logo">
         <div class="footer-logo-icon">
-          <img src="logo.png" alt="Hauser">
+          <img src="logo.png" alt="Hauser" width="34" height="34" loading="lazy">
         </div>
         <span class="footer-logo-name">Hau<span>ser</span></span>
       </a>
       <p class="footer-tagline">Dein Immobilienportfolio.<br>Klar im Blick. Für immer kostenlos.</p>
+      <p class="footer-nap">Pestelstr. 38, 49324 Melle · <a href="mailto:info@hauser.app">info@hauser.app</a></p>
     </div>
     <div class="footer-links">
       <div class="footer-col">
         <h4>App</h4>
         <ul>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#screens">Screenshots</a></li>
-          <li><a href="#pricing">Preise</a></li>
-          <li><a href="ratgeber.html">Ratgeber</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="finanzen.html">Finanzen</a></li>
+            <li><a href="nebenskosten.html">Nebenskosten</a></li>
+            <li><a href="aufgaben.html">Aufgaben</a></li>
+            <li><a href="ratgeber.html">Ratgeber</a></li>
+            <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Rechtliches</h4>
         <ul>
-          <li><a href="datenschutz.html">Datenschutz</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="datenschutz-app.html">Datenschutz App</a></li>
+            <li><a href="datenschutz.html">Datenschutz <span class="footer-ctx">Website</span></a></li>
+            <li><a href="datenschutz-app.html">Datenschutz <span class="footer-ctx">App</span></a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="agb.html">AGB</a></li>
         </ul>
       </div>
     </div>
