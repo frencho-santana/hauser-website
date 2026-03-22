@@ -20,6 +20,7 @@
 .site-nav .nav-logo-icon img{width:100%;height:100%;object-fit:cover}
 .site-nav .nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:inherit}
 .site-nav .nav-logo-name span{color:#2d8fa8}
+.site-nav .nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .site-nav .nav-badge{display:flex;align-items:center;gap:6px;background:rgba(26,74,90,0.08);border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;color:#1a4a5a;letter-spacing:0.05em}
 .site-nav .nav-badge-dot{width:6px;height:6px;border-radius:50%;background:#2d8fa8;animation:navpulse 2s ease infinite}
 @keyframes navpulse{50%{opacity:.6}}
@@ -27,7 +28,34 @@
 .site-nav .nav-links::-webkit-scrollbar{display:none}
 .site-nav .nav-links a{flex-shrink:0;padding:10px 12px;font-size:13px;font-weight:500;color:#1a4a5a;text-decoration:none;white-space:nowrap;border-radius:8px;transition:background .2s,color .2s;min-height:44px;display:inline-flex;align-items:center}
 .site-nav .nav-links a:hover{background:rgba(26,74,90,0.08);color:#1e6278}
-@media(min-width:900px){.site-nav .nav-links{gap:4px;overflow:visible;margin:0 24px}.site-nav .nav-links a{font-size:14px;padding:8px 14px;min-height:auto}}
+
+/* Burger – nur Mobile, rechts von Coming Soon */
+.site-nav .nav-burger{display:none;width:44px;height:44px;padding:12px;background:none;border:none;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:10px;transition:background .2s}
+.site-nav .nav-burger:hover{background:rgba(26,74,90,0.08)}
+.site-nav .nav-burger span{display:block;width:20px;height:2px;background:#1a4a5a;border-radius:1px;transition:transform .2s,opacity .2s}
+.site-nav .nav-burger span:nth-child(1){transform-origin:center}
+.site-nav .nav-burger span:nth-child(2){transform-origin:center}
+.site-nav .nav-burger span:nth-child(3){transform-origin:center}
+
+@media(max-width:899px){
+  .site-nav .nav-links{display:none}
+  .site-nav .nav-burger{display:flex}
+}
+@media(min-width:900px){
+  .site-nav .nav-right .nav-burger{display:none}
+  .site-nav .nav-links{display:flex;gap:4px;overflow:visible;margin:0 24px}
+  .site-nav .nav-links a{font-size:14px;padding:8px 14px;min-height:auto}
+}
+
+/* Mobile Menu Overlay */
+.nav-overlay{position:fixed;inset:0;z-index:199;background:rgba(20,20,20,0.5);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.nav-overlay.is-open{opacity:1;visibility:visible}
+.nav-mobile{position:fixed;top:0;right:0;bottom:0;width:min(300px,85vw);background:var(--cream,#f4f1ec);z-index:201;padding:88px 24px 32px;display:flex;flex-direction:column;gap:8px;box-shadow:-8px 0 32px rgba(0,0,0,0.12);transform:translateX(100%);transition:transform .3s}
+.nav-overlay.is-open .nav-mobile{transform:translateX(0)}
+.nav-mobile a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:#1a4a5a;text-decoration:none;border-radius:12px;transition:background .2s,color .2s}
+.nav-mobile a:hover{background:rgba(26,74,90,0.08);color:#1e6278}
+body.nav-menu-open{overflow:hidden}
+
 @media(min-width:600px){.site-nav{padding:16px var(--page-pad-edge)}}
 @media(min-width:1060px){.site-nav{padding:18px var(--page-pad-edge)}}
 .nav-spacer{height:72px;flex-shrink:0}

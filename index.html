@@ -593,11 +593,23 @@ footer{background:#0d0d0d;padding:48px var(--page-pad) 32px}
     <a href="ueber-uns.html">Über uns</a>
     <a href="kontakt.html">Kontakt</a>
   </div>
-  <div class="nav-badge">
-    <div class="nav-badge-dot"></div>
-    Coming Soon
+  <div class="nav-right">
+    <div class="nav-badge">
+      <div class="nav-badge-dot"></div>
+      Coming Soon
+    </div>
+    <button type="button" class="nav-burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav></header>
+<div class="nav-overlay" id="nav-overlay">
+  <div class="nav-mobile">
+    <a href="features.html">Features</a>
+    <a href="index.html#pricing">Preise</a>
+    <a href="ratgeber.html">Ratgeber</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -838,7 +850,7 @@ footer{background:#0d0d0d;padding:48px var(--page-pad) 32px}
         <div class="pro-teaser-item">Bankkonten anbinden</div>
         <div class="pro-teaser-item">Steuerberater-Export</div>
         <div class="pro-teaser-item">Erweiterte Analysen & Charts</div>
-        <div class="pro-teaser-item">Cloud-Backup & Sync</div>
+        <div class="pro-teaser-item">Mehrere User & Rollen (Admin, Finanzen, …)</div>
         <div class="pro-teaser-item">… und mehr kommt noch</div>
       </div>
       <span class="btn-plan btn-notify" style="cursor:default;opacity:0.9">Demnächst verfügbar</span>
@@ -919,5 +931,6 @@ const obs = new IntersectionObserver((entries) => {
 },{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
+<script src="nav.js"></script>
 </body>
 </html>
